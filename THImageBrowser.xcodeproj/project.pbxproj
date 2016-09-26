@@ -1,0 +1,411 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1CF393EE1D92C62C00DF11FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF393ED1D92C62C00DF11FF /* AppDelegate.swift */; };
+		1CF393F01D92C62C00DF11FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF393EF1D92C62C00DF11FF /* ViewController.swift */; };
+		1CF393F31D92C62C00DF11FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CF393F11D92C62C00DF11FF /* Main.storyboard */; };
+		1CF393F51D92C62C00DF11FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CF393F41D92C62C00DF11FF /* Assets.xcassets */; };
+		1CF393F81D92C62C00DF11FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CF393F61D92C62C00DF11FF /* LaunchScreen.storyboard */; };
+		1CF394001D92C96000DF11FF /* FadeInTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF393FF1D92C96000DF11FF /* FadeInTransition.swift */; };
+		1CF394021D92E80900DF11FF /* BViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF394011D92E80900DF11FF /* BViewController.swift */; };
+		1CF394041D92E83900DF11FF /* FadeInNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF394031D92E83900DF11FF /* FadeInNavigationDelegate.swift */; };
+		1CF394061D92F89F00DF11FF /* infogather_boy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CF394051D92F89F00DF11FF /* infogather_boy@2x.png */; };
+		75FA996FC6A64760E1F06397 /* libPods-HYImageBrowser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8B9B4C228DC5FD8F00C1BA /* libPods-HYImageBrowser.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1CE287041D93F5A200F591C4 /* HYImageBrowser-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HYImageBrowser-Bridging-Header.h"; sourceTree = "<group>"; };
+		1CF393EA1D92C62C00DF11FF /* THImageBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = THImageBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CF393ED1D92C62C00DF11FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1CF393EF1D92C62C00DF11FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1CF393F21D92C62C00DF11FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1CF393F41D92C62C00DF11FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1CF393F71D92C62C00DF11FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1CF393F91D92C62C00DF11FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1CF393FF1D92C96000DF11FF /* FadeInTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeInTransition.swift; sourceTree = "<group>"; };
+		1CF394011D92E80900DF11FF /* BViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BViewController.swift; sourceTree = "<group>"; };
+		1CF394031D92E83900DF11FF /* FadeInNavigationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeInNavigationDelegate.swift; sourceTree = "<group>"; };
+		1CF394051D92F89F00DF11FF /* infogather_boy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "infogather_boy@2x.png"; sourceTree = "<group>"; };
+		89F6850B99D6B24FC987B031 /* Pods-HYImageBrowser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYImageBrowser.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HYImageBrowser/Pods-HYImageBrowser.debug.xcconfig"; sourceTree = "<group>"; };
+		9B8B9B4C228DC5FD8F00C1BA /* libPods-HYImageBrowser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HYImageBrowser.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3D901EE60535094D3823E1B /* Pods-HYImageBrowser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYImageBrowser.release.xcconfig"; path = "Pods/Target Support Files/Pods-HYImageBrowser/Pods-HYImageBrowser.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1CF393E71D92C62C00DF11FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75FA996FC6A64760E1F06397 /* libPods-HYImageBrowser.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1CF393E11D92C62B00DF11FF = {
+			isa = PBXGroup;
+			children = (
+				1CF393EC1D92C62C00DF11FF /* THImageBrowser */,
+				1CF393EB1D92C62C00DF11FF /* Products */,
+				1CF394051D92F89F00DF11FF /* infogather_boy@2x.png */,
+				CACFFCB482040CCCCF03B86F /* Pods */,
+				D32A8937FBF9CEAA5E8D1A97 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1CF393EB1D92C62C00DF11FF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1CF393EA1D92C62C00DF11FF /* THImageBrowser.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1CF393EC1D92C62C00DF11FF /* THImageBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				1CF393ED1D92C62C00DF11FF /* AppDelegate.swift */,
+				1CF393EF1D92C62C00DF11FF /* ViewController.swift */,
+				1CF394011D92E80900DF11FF /* BViewController.swift */,
+				1CF393F11D92C62C00DF11FF /* Main.storyboard */,
+				1CF393F41D92C62C00DF11FF /* Assets.xcassets */,
+				1CF393F61D92C62C00DF11FF /* LaunchScreen.storyboard */,
+				1CF393F91D92C62C00DF11FF /* Info.plist */,
+				1CF393FF1D92C96000DF11FF /* FadeInTransition.swift */,
+				1CF394031D92E83900DF11FF /* FadeInNavigationDelegate.swift */,
+				1CE287041D93F5A200F591C4 /* HYImageBrowser-Bridging-Header.h */,
+			);
+			name = THImageBrowser;
+			path = HYImageBrowser;
+			sourceTree = "<group>";
+		};
+		CACFFCB482040CCCCF03B86F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				89F6850B99D6B24FC987B031 /* Pods-HYImageBrowser.debug.xcconfig */,
+				D3D901EE60535094D3823E1B /* Pods-HYImageBrowser.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D32A8937FBF9CEAA5E8D1A97 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B8B9B4C228DC5FD8F00C1BA /* libPods-HYImageBrowser.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1CF393E91D92C62C00DF11FF /* THImageBrowser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1CF393FC1D92C62C00DF11FF /* Build configuration list for PBXNativeTarget "THImageBrowser" */;
+			buildPhases = (
+				DFFBA8187D8FCFB537994AE6 /* [CP] Check Pods Manifest.lock */,
+				1CF393E61D92C62C00DF11FF /* Sources */,
+				1CF393E71D92C62C00DF11FF /* Frameworks */,
+				1CF393E81D92C62C00DF11FF /* Resources */,
+				D644E70E636780C36E688416 /* [CP] Embed Pods Frameworks */,
+				47FA01505FF256890F7B89C1 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = THImageBrowser;
+			productName = HYImageBrowser;
+			productReference = 1CF393EA1D92C62C00DF11FF /* THImageBrowser.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1CF393E21D92C62B00DF11FF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = tuhu;
+				TargetAttributes = {
+					1CF393E91D92C62C00DF11FF = {
+						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 1CF393E51D92C62B00DF11FF /* Build configuration list for PBXProject "THImageBrowser" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1CF393E11D92C62B00DF11FF;
+			productRefGroup = 1CF393EB1D92C62C00DF11FF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1CF393E91D92C62C00DF11FF /* THImageBrowser */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1CF393E81D92C62C00DF11FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CF393F81D92C62C00DF11FF /* LaunchScreen.storyboard in Resources */,
+				1CF393F51D92C62C00DF11FF /* Assets.xcassets in Resources */,
+				1CF394061D92F89F00DF11FF /* infogather_boy@2x.png in Resources */,
+				1CF393F31D92C62C00DF11FF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		47FA01505FF256890F7B89C1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HYImageBrowser/Pods-HYImageBrowser-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D644E70E636780C36E688416 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HYImageBrowser/Pods-HYImageBrowser-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DFFBA8187D8FCFB537994AE6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1CF393E61D92C62C00DF11FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CF394041D92E83900DF11FF /* FadeInNavigationDelegate.swift in Sources */,
+				1CF393F01D92C62C00DF11FF /* ViewController.swift in Sources */,
+				1CF394021D92E80900DF11FF /* BViewController.swift in Sources */,
+				1CF394001D92C96000DF11FF /* FadeInTransition.swift in Sources */,
+				1CF393EE1D92C62C00DF11FF /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1CF393F11D92C62C00DF11FF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1CF393F21D92C62C00DF11FF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1CF393F61D92C62C00DF11FF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1CF393F71D92C62C00DF11FF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1CF393FA1D92C62C00DF11FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1CF393FB1D92C62C00DF11FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1CF393FD1D92C62C00DF11FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89F6850B99D6B24FC987B031 /* Pods-HYImageBrowser.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = HYImageBrowser/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.hyDev.THImageBrowser;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HYImageBrowser/HYImageBrowser-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		1CF393FE1D92C62C00DF11FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3D901EE60535094D3823E1B /* Pods-HYImageBrowser.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = HYImageBrowser/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.hyDev.THImageBrowser;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HYImageBrowser/HYImageBrowser-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1CF393E51D92C62B00DF11FF /* Build configuration list for PBXProject "THImageBrowser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1CF393FA1D92C62C00DF11FF /* Debug */,
+				1CF393FB1D92C62C00DF11FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1CF393FC1D92C62C00DF11FF /* Build configuration list for PBXNativeTarget "THImageBrowser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1CF393FD1D92C62C00DF11FF /* Debug */,
+				1CF393FE1D92C62C00DF11FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1CF393E21D92C62B00DF11FF /* Project object */;
+}
