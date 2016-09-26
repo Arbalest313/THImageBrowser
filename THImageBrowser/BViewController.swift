@@ -27,8 +27,8 @@ class BViewController: UIViewController,FadeInTransitionProtocal {
     }
     
     func endFadeInView(info: AnyObject?) -> UIView? {
-        if let info = info as? URL!, SDWebImageManager.shared().cachedImageExists(for: info) {
-            fadeInView?.frame = CGRect(x: 0, y: 200, width: UIScreen.main.bounds.width, height: 100);
+        if let info = info as? URL!, SDWebImageManager.shared().cachedImageExists(for: info) || true{
+            fadeInView?.frame = CGRect(x: 0, y: 200, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width);
         }
         return fadeInView
     }

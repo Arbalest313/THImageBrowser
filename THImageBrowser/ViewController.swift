@@ -22,7 +22,7 @@ class ViewController: UIViewController, FadeInTransitionProtocal {
     override func viewDidLoad() {
         super.viewDidLoad()
         let aV = UIView()
-        aV.frame = CGRect(x: 0, y: 90, width: 48, height: 48)//CGRectMake(100,100,100,100)
+        aV.frame = CGRect(x: UIScreen.main.bounds.width/2 - 24, y: 100, width: 48, height: 48)//CGRectMake(100,100,100,100)
         aV.backgroundColor = UIColor.black
         view.addSubview(aV)
         fadeInView = aV

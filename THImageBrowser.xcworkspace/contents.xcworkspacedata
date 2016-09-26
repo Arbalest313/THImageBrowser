@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/yuan/Documents/iOS/HYImageBrowser/THImageBrowser.xcodeproj">
+      location = "group:THImageBrowser.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

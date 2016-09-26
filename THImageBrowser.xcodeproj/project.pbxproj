@@ -7,33 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1CF393EE1D92C62C00DF11FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF393ED1D92C62C00DF11FF /* AppDelegate.swift */; };
-		1CF393F01D92C62C00DF11FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF393EF1D92C62C00DF11FF /* ViewController.swift */; };
-		1CF393F31D92C62C00DF11FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CF393F11D92C62C00DF11FF /* Main.storyboard */; };
-		1CF393F51D92C62C00DF11FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CF393F41D92C62C00DF11FF /* Assets.xcassets */; };
-		1CF393F81D92C62C00DF11FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CF393F61D92C62C00DF11FF /* LaunchScreen.storyboard */; };
-		1CF394001D92C96000DF11FF /* FadeInTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF393FF1D92C96000DF11FF /* FadeInTransition.swift */; };
-		1CF394021D92E80900DF11FF /* BViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF394011D92E80900DF11FF /* BViewController.swift */; };
-		1CF394041D92E83900DF11FF /* FadeInNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF394031D92E83900DF11FF /* FadeInNavigationDelegate.swift */; };
+		1C2EF0B81D98D38800E46390 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2EF0AB1D98D38800E46390 /* AppDelegate.swift */; };
+		1C2EF0B91D98D38800E46390 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C2EF0AC1D98D38800E46390 /* Assets.xcassets */; };
+		1C2EF0BA1D98D38800E46390 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C2EF0AE1D98D38800E46390 /* LaunchScreen.storyboard */; };
+		1C2EF0BB1D98D38800E46390 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C2EF0B01D98D38800E46390 /* Main.storyboard */; };
+		1C2EF0BC1D98D38800E46390 /* BViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2EF0B21D98D38800E46390 /* BViewController.swift */; };
+		1C2EF0BF1D98D38800E46390 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1C2EF0B61D98D38800E46390 /* Info.plist */; };
+		1C2EF0C01D98D38800E46390 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2EF0B71D98D38800E46390 /* ViewController.swift */; };
+		1C2EF0C41D98E27400E46390 /* FadeInNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2EF0C21D98E27400E46390 /* FadeInNavigationDelegate.swift */; };
+		1C2EF0C51D98E27400E46390 /* FadeInTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2EF0C31D98E27400E46390 /* FadeInTransition.swift */; };
 		1CF394061D92F89F00DF11FF /* infogather_boy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CF394051D92F89F00DF11FF /* infogather_boy@2x.png */; };
-		75FA996FC6A64760E1F06397 /* libPods-HYImageBrowser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8B9B4C228DC5FD8F00C1BA /* libPods-HYImageBrowser.a */; };
+		85CBB5A335E7E5885FC4A7EA /* libPods-THImageBrowser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EDC8AE2E72C86C30C11EB2D /* libPods-THImageBrowser.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1CE287041D93F5A200F591C4 /* HYImageBrowser-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HYImageBrowser-Bridging-Header.h"; sourceTree = "<group>"; };
+		1C2EF0AB1D98D38800E46390 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = THImageBrowser/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		1C2EF0AC1D98D38800E46390 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = THImageBrowser/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		1C2EF0AF1D98D38800E46390 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1C2EF0B11D98D38800E46390 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
+		1C2EF0B21D98D38800E46390 /* BViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BViewController.swift; path = THImageBrowser/BViewController.swift; sourceTree = SOURCE_ROOT; };
+		1C2EF0B51D98D38800E46390 /* THImageBrowser-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "THImageBrowser-Bridging-Header.h"; path = "THImageBrowser/THImageBrowser-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		1C2EF0B61D98D38800E46390 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = THImageBrowser/Info.plist; sourceTree = SOURCE_ROOT; };
+		1C2EF0B71D98D38800E46390 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = THImageBrowser/ViewController.swift; sourceTree = SOURCE_ROOT; };
+		1C2EF0C21D98E27400E46390 /* FadeInNavigationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeInNavigationDelegate.swift; sourceTree = "<group>"; };
+		1C2EF0C31D98E27400E46390 /* FadeInTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeInTransition.swift; sourceTree = "<group>"; };
 		1CF393EA1D92C62C00DF11FF /* THImageBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = THImageBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1CF393ED1D92C62C00DF11FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1CF393EF1D92C62C00DF11FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1CF393F21D92C62C00DF11FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1CF393F41D92C62C00DF11FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1CF393F71D92C62C00DF11FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		1CF393F91D92C62C00DF11FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1CF393FF1D92C96000DF11FF /* FadeInTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeInTransition.swift; sourceTree = "<group>"; };
-		1CF394011D92E80900DF11FF /* BViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BViewController.swift; sourceTree = "<group>"; };
-		1CF394031D92E83900DF11FF /* FadeInNavigationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeInNavigationDelegate.swift; sourceTree = "<group>"; };
 		1CF394051D92F89F00DF11FF /* infogather_boy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "infogather_boy@2x.png"; sourceTree = "<group>"; };
 		89F6850B99D6B24FC987B031 /* Pods-HYImageBrowser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYImageBrowser.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HYImageBrowser/Pods-HYImageBrowser.debug.xcconfig"; sourceTree = "<group>"; };
-		9B8B9B4C228DC5FD8F00C1BA /* libPods-HYImageBrowser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HYImageBrowser.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EDC8AE2E72C86C30C11EB2D /* libPods-THImageBrowser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-THImageBrowser.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9E817395157F7C2EE9341ED /* Pods-THImageBrowser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-THImageBrowser.debug.xcconfig"; path = "Pods/Target Support Files/Pods-THImageBrowser/Pods-THImageBrowser.debug.xcconfig"; sourceTree = "<group>"; };
+		C9B141B5E04AA5C2FAE650F5 /* Pods-THImageBrowser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-THImageBrowser.release.xcconfig"; path = "Pods/Target Support Files/Pods-THImageBrowser/Pods-THImageBrowser.release.xcconfig"; sourceTree = "<group>"; };
 		D3D901EE60535094D3823E1B /* Pods-HYImageBrowser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYImageBrowser.release.xcconfig"; path = "Pods/Target Support Files/Pods-HYImageBrowser/Pods-HYImageBrowser.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -42,19 +45,40 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75FA996FC6A64760E1F06397 /* libPods-HYImageBrowser.a in Frameworks */,
+				85CBB5A335E7E5885FC4A7EA /* libPods-THImageBrowser.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C2EF0AD1D98D38800E46390 /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				1C2EF0AE1D98D38800E46390 /* LaunchScreen.storyboard */,
+				1C2EF0B01D98D38800E46390 /* Main.storyboard */,
+			);
+			name = Base.lproj;
+			path = THImageBrowser/Base.lproj;
+			sourceTree = SOURCE_ROOT;
+		};
+		1C2EF0C11D98E27400E46390 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				1C2EF0C21D98E27400E46390 /* FadeInNavigationDelegate.swift */,
+				1C2EF0C31D98E27400E46390 /* FadeInTransition.swift */,
+			);
+			name = Transition;
+			path = THImageBrowser/Transition;
+			sourceTree = SOURCE_ROOT;
+		};
 		1CF393E11D92C62B00DF11FF = {
 			isa = PBXGroup;
 			children = (
 				1CF393EC1D92C62C00DF11FF /* THImageBrowser */,
 				1CF393EB1D92C62C00DF11FF /* Products */,
 				1CF394051D92F89F00DF11FF /* infogather_boy@2x.png */,
+				1C2EF0B61D98D38800E46390 /* Info.plist */,
 				CACFFCB482040CCCCF03B86F /* Pods */,
 				D32A8937FBF9CEAA5E8D1A97 /* Frameworks */,
 			);
@@ -71,16 +95,13 @@
 		1CF393EC1D92C62C00DF11FF /* THImageBrowser */ = {
 			isa = PBXGroup;
 			children = (
-				1CF393ED1D92C62C00DF11FF /* AppDelegate.swift */,
-				1CF393EF1D92C62C00DF11FF /* ViewController.swift */,
-				1CF394011D92E80900DF11FF /* BViewController.swift */,
-				1CF393F11D92C62C00DF11FF /* Main.storyboard */,
-				1CF393F41D92C62C00DF11FF /* Assets.xcassets */,
-				1CF393F61D92C62C00DF11FF /* LaunchScreen.storyboard */,
-				1CF393F91D92C62C00DF11FF /* Info.plist */,
-				1CF393FF1D92C96000DF11FF /* FadeInTransition.swift */,
-				1CF394031D92E83900DF11FF /* FadeInNavigationDelegate.swift */,
-				1CE287041D93F5A200F591C4 /* HYImageBrowser-Bridging-Header.h */,
+				1C2EF0AC1D98D38800E46390 /* Assets.xcassets */,
+				1C2EF0B21D98D38800E46390 /* BViewController.swift */,
+				1C2EF0B71D98D38800E46390 /* ViewController.swift */,
+				1C2EF0C11D98E27400E46390 /* Transition */,
+				1C2EF0AD1D98D38800E46390 /* Base.lproj */,
+				1C2EF0B51D98D38800E46390 /* THImageBrowser-Bridging-Header.h */,
+				1C2EF0AB1D98D38800E46390 /* AppDelegate.swift */,
 			);
 			name = THImageBrowser;
 			path = HYImageBrowser;
@@ -91,6 +112,8 @@
 			children = (
 				89F6850B99D6B24FC987B031 /* Pods-HYImageBrowser.debug.xcconfig */,
 				D3D901EE60535094D3823E1B /* Pods-HYImageBrowser.release.xcconfig */,
+				B9E817395157F7C2EE9341ED /* Pods-THImageBrowser.debug.xcconfig */,
+				C9B141B5E04AA5C2FAE650F5 /* Pods-THImageBrowser.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -98,7 +121,7 @@
 		D32A8937FBF9CEAA5E8D1A97 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9B8B9B4C228DC5FD8F00C1BA /* libPods-HYImageBrowser.a */,
+				8EDC8AE2E72C86C30C11EB2D /* libPods-THImageBrowser.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -166,10 +189,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CF393F81D92C62C00DF11FF /* LaunchScreen.storyboard in Resources */,
-				1CF393F51D92C62C00DF11FF /* Assets.xcassets in Resources */,
+				1C2EF0BF1D98D38800E46390 /* Info.plist in Resources */,
+				1C2EF0BB1D98D38800E46390 /* Main.storyboard in Resources */,
 				1CF394061D92F89F00DF11FF /* infogather_boy@2x.png in Resources */,
-				1CF393F31D92C62C00DF11FF /* Main.storyboard in Resources */,
+				1C2EF0BA1D98D38800E46390 /* LaunchScreen.storyboard in Resources */,
+				1C2EF0B91D98D38800E46390 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,7 +212,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HYImageBrowser/Pods-HYImageBrowser-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-THImageBrowser/Pods-THImageBrowser-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D644E70E636780C36E688416 /* [CP] Embed Pods Frameworks */ = {
@@ -203,7 +227,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HYImageBrowser/Pods-HYImageBrowser-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-THImageBrowser/Pods-THImageBrowser-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DFFBA8187D8FCFB537994AE6 /* [CP] Check Pods Manifest.lock */ = {
@@ -228,31 +252,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CF394041D92E83900DF11FF /* FadeInNavigationDelegate.swift in Sources */,
-				1CF393F01D92C62C00DF11FF /* ViewController.swift in Sources */,
-				1CF394021D92E80900DF11FF /* BViewController.swift in Sources */,
-				1CF394001D92C96000DF11FF /* FadeInTransition.swift in Sources */,
-				1CF393EE1D92C62C00DF11FF /* AppDelegate.swift in Sources */,
+				1C2EF0C01D98D38800E46390 /* ViewController.swift in Sources */,
+				1C2EF0BC1D98D38800E46390 /* BViewController.swift in Sources */,
+				1C2EF0B81D98D38800E46390 /* AppDelegate.swift in Sources */,
+				1C2EF0C51D98E27400E46390 /* FadeInTransition.swift in Sources */,
+				1C2EF0C41D98E27400E46390 /* FadeInNavigationDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1CF393F11D92C62C00DF11FF /* Main.storyboard */ = {
+		1C2EF0AE1D98D38800E46390 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1CF393F21D92C62C00DF11FF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		1CF393F61D92C62C00DF11FF /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1CF393F71D92C62C00DF11FF /* Base */,
+				1C2EF0AF1D98D38800E46390 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		1C2EF0B01D98D38800E46390 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1C2EF0B11D98D38800E46390 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -351,17 +375,17 @@
 		};
 		1CF393FD1D92C62C00DF11FF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89F6850B99D6B24FC987B031 /* Pods-HYImageBrowser.debug.xcconfig */;
+			baseConfigurationReference = B9E817395157F7C2EE9341ED /* Pods-THImageBrowser.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = HYImageBrowser/Info.plist;
+				INFOPLIST_FILE = THImageBrowser/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.hyDev.THImageBrowser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "HYImageBrowser/HYImageBrowser-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "./THImageBrowser/THImageBrowser-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -369,17 +393,17 @@
 		};
 		1CF393FE1D92C62C00DF11FF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D3D901EE60535094D3823E1B /* Pods-HYImageBrowser.release.xcconfig */;
+			baseConfigurationReference = C9B141B5E04AA5C2FAE650F5 /* Pods-THImageBrowser.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = HYImageBrowser/Info.plist;
+				INFOPLIST_FILE = THImageBrowser/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.hyDev.THImageBrowser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "HYImageBrowser/HYImageBrowser-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "./THImageBrowser/THImageBrowser-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
