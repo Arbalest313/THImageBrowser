@@ -1,0 +1,6 @@
+framework module Pods_THImageBrowser {
+  umbrella header "Pods-THImageBrowser-umbrella.h"
+
+  export *
+  module * { export * }
+}

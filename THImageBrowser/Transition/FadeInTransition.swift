@@ -10,7 +10,7 @@ import UIKit
 
 @objc protocol FadeInTransitionProtocal {
 
-    func endFadeInView(info: AnyObject?) -> UIView?
+    func endFadeInView(_ info: AnyObject?) -> UIView?
 
     var fadeInView : UIView? {get set}
     
@@ -33,7 +33,7 @@ class FadeInTransition: NSObject, UIViewControllerAnimatedTransitioning {
         guard let fromPotocol = fromVC as? FadeInTransitionProtocal else {return}
         guard let toPotocol = toVC as? FadeInTransitionProtocal else {return}
         let fromV = fromPotocol.fadeInView
-        let toV = toPotocol.endFadeInView(info:fromPotocol.fadeInViewInfo!)
+        let toV = toPotocol.endFadeInView(fromPotocol.fadeInViewInfo!)
         
         let snapShot = fromV?.snapshotView(afterScreenUpdates: false)
         snapShot?.frame = containView.convert((fromV?.frame)!, to: fromV?.superview)
@@ -47,14 +47,16 @@ class FadeInTransition: NSObject, UIViewControllerAnimatedTransitioning {
         
         let frame = containView.convert((toV?.frame)!, to: toV?.superview)
 
-        UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
+        UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0, options: UIViewAnimationOptions.curveEaseOut, animations: { 
             snapShot?.frame = frame
-            toVC.view.alpha = 1
-            }) { (_) in
+            toVC.view.alpha = 1.0
+
+        }) { (_) in
                 fromV?.isHidden = false
                 toV?.isHidden = false
                 snapShot?.removeFromSuperview()
                 transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+
         }
     }
 }

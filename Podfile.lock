@@ -23,18 +23,21 @@ PODS:
   - libwebp/utils (0.5.0):
     - libwebp/core
   - libwebp/webp (0.5.0)
+  - PureLayout (3.0.2)
   - SDWebImage/Core (3.8.1)
   - SDWebImage/WebP (3.8.1):
     - libwebp
     - SDWebImage/Core
 
 DEPENDENCIES:
+  - PureLayout
   - SDWebImage/WebP (~> 3.0)
 
 SPEC CHECKSUMS:
   libwebp: 68ba2001ba6806ee52837ebd77a551a0b6567e4e
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
 
-PODFILE CHECKSUM: ede0d8e490b91392f515f4476b41dcbede305442
+PODFILE CHECKSUM: cc403cbf477534147e8c354ef7a1dd9e381c455c
 
 COCOAPODS: 1.0.1

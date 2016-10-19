@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Saf-Ir-nJW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XHs-UF-sO6">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,32 +15,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="a2y-rn-182"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aDz-zl-AnD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-791" y="-17"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="kYF-CZ-D52">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HYImageBrowser" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XHs-UF-sO6" customClass="ViewController" customModule="THImageBrowser" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="lUs-eW-ykH"/>
+                        <viewControllerLayoutGuide type="bottom" id="fsm-nP-BFy"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="yVZ-my-7Ao">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jmf-2k-kTU" userLabel="b1">
+                                <connections>
+                                    <action selector="showBroswer:" destination="XHs-UF-sO6" eventType="touchUpInside" id="1bU-hG-VjE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nz5-I5-f4b" userLabel="b2">
+                                <connections>
+                                    <action selector="showBroswer:" destination="XHs-UF-sO6" eventType="touchUpInside" id="2ac-pH-0Tm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9M-it-Ud7" userLabel="b3">
+                                <connections>
+                                    <action selector="showBroswer:" destination="XHs-UF-sO6" eventType="touchUpInside" id="MjK-vQ-IWZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Jmf-2k-kTU" firstAttribute="height" secondItem="yVZ-my-7Ao" secondAttribute="height" multiplier="0.5" id="0Vj-UG-FKg"/>
+                            <constraint firstAttribute="trailing" secondItem="Jmf-2k-kTU" secondAttribute="trailing" id="1Ee-Ix-Pro"/>
+                            <constraint firstItem="nz5-I5-f4b" firstAttribute="top" secondItem="Jmf-2k-kTU" secondAttribute="bottom" constant="1" id="4M8-xo-5YU"/>
+                            <constraint firstItem="K9M-it-Ud7" firstAttribute="height" secondItem="nz5-I5-f4b" secondAttribute="height" id="AbT-Cm-CQq"/>
+                            <constraint firstItem="Jmf-2k-kTU" firstAttribute="top" secondItem="lUs-eW-ykH" secondAttribute="bottom" constant="-19" id="GdH-Uj-twm"/>
+                            <constraint firstItem="nz5-I5-f4b" firstAttribute="width" secondItem="yVZ-my-7Ao" secondAttribute="width" multiplier="0.5" id="Ssi-Qs-1cr"/>
+                            <constraint firstItem="K9M-it-Ud7" firstAttribute="leading" secondItem="nz5-I5-f4b" secondAttribute="trailing" constant="1" id="VWK-lX-g5m"/>
+                            <constraint firstItem="fsm-nP-BFy" firstAttribute="top" secondItem="nz5-I5-f4b" secondAttribute="bottom" id="W3g-cl-9hW"/>
+                            <constraint firstItem="nz5-I5-f4b" firstAttribute="leading" secondItem="Jmf-2k-kTU" secondAttribute="leading" id="fwi-oP-viV"/>
+                            <constraint firstItem="Jmf-2k-kTU" firstAttribute="width" secondItem="yVZ-my-7Ao" secondAttribute="width" id="jbw-MK-hzv"/>
+                            <constraint firstItem="K9M-it-Ud7" firstAttribute="top" secondItem="Jmf-2k-kTU" secondAttribute="bottom" constant="1" id="mqO-Ye-QPk"/>
+                            <constraint firstItem="K9M-it-Ud7" firstAttribute="width" secondItem="nz5-I5-f4b" secondAttribute="width" id="pyu-Ar-nCl"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="kVg-7H-lWX"/>
+                    <connections>
+                        <outlet property="btn1" destination="Jmf-2k-kTU" id="YJ4-rr-95K"/>
+                        <outlet property="btn2" destination="nz5-I5-f4b" id="W6k-La-RcK"/>
+                        <outlet property="btn3" destination="K9M-it-Ud7" id="KHB-Zk-Mhl"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zk7-9B-K2U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="329" y="-29"/>
+            <point key="canvasLocation" x="410" y="16"/>
         </scene>
     </scenes>
 </document>
