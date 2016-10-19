@@ -103,14 +103,14 @@
 		1CF393EC1D92C62C00DF11FF /* THImageBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				1C2EF0C11D98E27400E46390 /* Transition */,
 				1C2EF0AC1D98D38800E46390 /* Assets.xcassets */,
+				1C2EF0AB1D98D38800E46390 /* AppDelegate.swift */,
 				1C2EF0B21D98D38800E46390 /* BViewController.swift */,
 				1C2EF0B71D98D38800E46390 /* ViewController.swift */,
-				1C09A1461DB72626005F3CAA /* MMUtils.swift */,
-				1C2EF0C11D98E27400E46390 /* Transition */,
-				1C2EF0AD1D98D38800E46390 /* Base.lproj */,
-				1C2EF0AB1D98D38800E46390 /* AppDelegate.swift */,
 				1C09A13C1DB70911005F3CAA /* THImageBroswer.swift */,
+				1C09A1461DB72626005F3CAA /* MMUtils.swift */,
+				1C2EF0AD1D98D38800E46390 /* Base.lproj */,
 				1CD6CA981DAF9D1100F0B812 /* THBImageView.swift */,
 			);
 			name = THImageBrowser;

@@ -21,6 +21,8 @@ class THImageBroswer: UIView,UIScrollViewDelegate {
         }
     }
     
+    var tmp : UIView?
+    var displaylink : CADisplayLink?
     //淡入淡出时的视图
     var fadeInView : UIView?
     var fadeOutView : ((_ currentIndex: Int) -> (UIView?))?
@@ -61,6 +63,7 @@ class THImageBroswer: UIView,UIScrollViewDelegate {
 //        let index = scrollView.contentOffset.x / bounds.width
     }
     
+    
 }
 
 extension THImageBroswer {
@@ -70,18 +73,33 @@ extension THImageBroswer {
             return
         }
         scrollView.isHidden = true
-        let fadeView = fadeInView.snapshotView(afterScreenUpdates:false)
+        var fadeView = fadeInView.snapshotView(afterScreenUpdates:false)
         
-        if SDWebImageManager.shared().cachedImageExists(for:URL(string:(urls?(currentIndex))!)) {
-            fadeView?.frame = (fadeInView.superview?.convert(fadeInView.frame, to: self))!
-        } else {
-            fadeView?.frame = (fadeInView.superview?.convert(fadeInView.frame, to: self))!
+        fadeView?.frame = (fadeInView.superview?.convert(fadeInView.frame, to: self))!
+        
+        var w = (fadeView?.frame.width)!
+        var h = (fadeView?.frame.height)!
+        
+        //如果已经下载好了大图，重新计算图片的大小，
+        let url = URL(string:(urls?(currentIndex))!)
+        if SDWebImageManager.shared().cachedImageExists(for:url) {
+            let originalImage = UIImageView()
+            originalImage.image = SDWebImageManager.shared().imageCache.imageFromDiskCache(forKey: SDWebImageManager.shared().cacheKey(for: url))
+            originalImage.frame = (fadeView?.frame)!
+            fadeView = originalImage
+            w = (bounds.width - 2)
+            h = (bounds.height)
         }
-        
+
+        let x = (bounds.width - w)/2
+        let y = (bounds.height - h)/2
+
+        let finalFrame = CGRect(x:x, y:y, width:w, height:h)
+
         addSubview(fadeView!)
         
         UIView.animate(withDuration: kFadeInOutDuration, animations: {
-            fadeView?.center = self.center
+                fadeView?.frame = finalFrame
         }) { (_) in
             fadeView?.removeFromSuperview()
             self.scrollView.isHidden = false;
@@ -89,43 +107,63 @@ extension THImageBroswer {
     }
 
     fileprivate func fadeOut(gestureRecognizers : UITapGestureRecognizer) {
-        let currentView = gestureRecognizers.view!
+        let currentView = gestureRecognizers.view as! UIImageView
         let index = indexFrom(tag: currentView.tag)
+        self.backgroundColor = UIColor.clear
+
         guard let fadeOutView = fadeOutView!(index) else {
             self.removeFromSuperview()
             return
         }
         
-        let fadeView = currentView.snapshotView(afterScreenUpdates:false)
-        fadeView?.frame = (currentView.superview?.convert(currentView.frame, to: self))!
-        addSubview(fadeView!)
+        let fadeView = UIImageView()
+//        fadeView.contentMode = UIViewContentMode.scaleAspectFill
+//        fadeView.layer.masksToBounds = true
+        fadeView.frame = (currentView.superview?.convert(currentView.frame, to: self))!
+        fadeView.image = currentView.image // = currentView.snapshotView(afterScreenUpdates:false)
+        fadeView.setNeedsDisplay()
+
+        addSubview(fadeView)
+        
+        tmp = fadeView
         
         scrollView.isHidden = true
 
         
         let tmpRct = (fadeOutView.superview?.convert(fadeOutView.frame, to: self))!
 
+//        displaylink = CADisplayLink(target: self, selector:#selector(updateDisplay))
+//        displaylink?.add(to: RunLoop.main, forMode:.defaultRunLoopMode)
+
         UIView.animate(withDuration: kFadeInOutDuration, animations: {
-            fadeView?.frame = tmpRct
-            self.backgroundColor = UIColor.clear
+            fadeView.frame = tmpRct
+
         }) { (_) in
+//            self.displaylink?.invalidate()
             self.removeFromSuperview()
         }
     }
+    
+    @objc fileprivate func updateDisplay () {
+        tmp?.setNeedsDisplay()
+    }
+
 }
 
 extension THImageBroswer {
     fileprivate func starImagesCloseTo(index:Int){
-        defer {
-            loadImageFor(index: index)
-        }
+
+        loadImageFor(index: index)
+        
         if index != 0 {
             loadImageFor(index: index - 1)
         }
+        
         if index != numberOfImages - 1 {
             loadImageFor(index: index + 1)
         }
     }
+    
     fileprivate func loadImageFor(index:Int){
         guard let imageV = scrollView.viewWithTag(index + ktagOffset) as? UIImageView else {
             return
@@ -154,11 +192,13 @@ extension THImageBroswer {
         for index in 0...numberOfImages - 1 {
             let view = UIImageView()
             view.tag = index + ktagOffset
-            view.isUserInteractionEnabled = true;
-//            view.backgroundColor = (index % 2  == 0 ? UIColor.red : UIColor.black)
+            view.isUserInteractionEnabled = true
             let singleTap = UITapGestureRecognizer(target: self, action: #selector( dismiss(gestureRecognizers:)))
             view.addGestureRecognizer(singleTap)
             scrollView.addSubview(view)
+//            view.contentMode = .scaleAspectFill
+//            view.layer.masksToBounds = true
+
         }
         
     }
