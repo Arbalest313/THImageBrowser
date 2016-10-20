@@ -33,6 +33,8 @@ class THImageBroswer: UIView,UIScrollViewDelegate {
     }
     
     
+//    let imageViewer : ImageViewer?
+    
     fileprivate var scrollView = UIScrollView()
     fileprivate var showing = false
     
@@ -131,7 +133,7 @@ extension THImageBroswer {
 
         
         let tmpRct = (fadeOutView.superview?.convert(fadeOutView.frame, to: self))!
-
+        
 //        displaylink = CADisplayLink(target: self, selector:#selector(updateDisplay))
 //        displaylink?.add(to: RunLoop.main, forMode:.defaultRunLoopMode)
 
@@ -181,6 +183,71 @@ extension THImageBroswer {
         return tag - ktagOffset
     }
     
+    fileprivate func addGesture(toView imageView:ScaleUIImageView) {
+        //singleTap
+        let singleTap = UITapGestureRecognizer(target: self, action: #selector( dismiss(gestureRecognizers:)))
+        imageView.addGestureRecognizer(singleTap)
+        
+        //doubleTap
+        let doubleTap = UITapGestureRecognizer(actionBlock: { (ges) in
+            if (ges as? UITapGestureRecognizer) != nil {
+                if imageView.scale == 1 {
+                    imageView.scale = 2
+                    
+                    UIView.animate(withDuration: 0.4, animations: {
+                        imageView.layer.setAffineTransform(CGAffineTransform(scaleX: 2, y: 2))
+                    })
+                }
+                else {
+                    imageView.scale = 1
+                    imageView.zoomed = false
+                    
+                    UIView.animate(withDuration: 0.4, animations: {
+                        imageView.layer.setAffineTransform(CGAffineTransform(scaleX: 1, y: 1))
+                    })
+                }
+            }
+        })
+        
+        doubleTap!.numberOfTapsRequired = 2
+        imageView.addGestureRecognizer(doubleTap!)
+        singleTap.require(toFail: doubleTap!)
+        
+        // pinch
+        let pinch = UIPinchGestureRecognizer.init(actionBlock: { (ges) in
+            if let sender =  ges as? UIPinchGestureRecognizer {
+                
+                
+                let scale = max(imageView.scale * sender.scale, 1)
+                
+                let location = sender.location(in: imageView)
+                let contentViewSize = self.bounds.size
+                
+                if sender.state == .began {
+                    if !imageView.zoomed {
+                        let lastAnchor = imageView.layer.anchorPoint
+                        let lastPosition = imageView.layer.position
+                        
+                        imageView.layer.anchorPoint = CGPoint(x: location.x / contentViewSize.width, y: location.y / contentViewSize.height)
+                        imageView.layer.position = CGPoint(x: lastPosition.x + (imageView.layer.anchorPoint.x - lastAnchor.x) * imageView.frame.width * scale, y: lastPosition.y + (imageView.layer.anchorPoint.y - lastAnchor.y) * imageView.frame.height * scale)
+                    }
+                    imageView.zoomed = true
+                }
+                
+                imageView.layer.setAffineTransform(CGAffineTransform(scaleX: scale, y: scale))
+                
+                if sender.state == .ended || sender.state == .cancelled{
+                    imageView.scale = scale
+                    if scale == 1 {
+                        imageView.zoomed = false
+                    }
+                }
+            }
+        })
+        imageView.addGestureRecognizer(pinch!)
+    
+    }
+    
     fileprivate func setUPScrollView (){
         scrollView.delegate = self
         scrollView.isPagingEnabled = true
@@ -188,19 +255,14 @@ extension THImageBroswer {
         scrollView.showsVerticalScrollIndicator = false;
         addSubview(scrollView)
         
-
         for index in 0...numberOfImages - 1 {
-            let view = UIImageView()
-            view.tag = index + ktagOffset
-            view.isUserInteractionEnabled = true
-            let singleTap = UITapGestureRecognizer(target: self, action: #selector( dismiss(gestureRecognizers:)))
-            view.addGestureRecognizer(singleTap)
-            scrollView.addSubview(view)
-//            view.contentMode = .scaleAspectFill
-//            view.layer.masksToBounds = true
-
+            let imageView = ScaleUIImageView()
+            imageView.tag = index + ktagOffset
+            imageView.isUserInteractionEnabled = true
+//            imageView.contentMode = .scaleAspectFill
+            addGesture(toView: imageView)
+            scrollView.addSubview(imageView)
         }
-        
     }
     
     override func layoutSubviews() {
@@ -228,5 +290,7 @@ extension THImageBroswer {
         starImagesCloseTo(index:currentIndex)
     }
 
+    
+    
 
 }

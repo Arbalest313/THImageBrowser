@@ -15,18 +15,21 @@ class ViewController: UIViewController {
 
     var del = FadeInNavigationDelegate()
     //thumb300,or360
-    var compressedURL = [//"http://ww2.sinaimg.cn/or360/65dc76a3gw1f8xfl7vpj5j20p10dxtdk.jpg",
+    var compressedURL = [
+                         "http://ww2.sinaimg.cn/or360/65dc76a3gw1f8xfl7vpj5j20p10dxtdk.jpg",
                          "http://ww4.sinaimg.cn/or360/855c540agw1ez4x0wycsvj20p00dwtck.jpg",
                          "http://ww2.sinaimg.cn/or360/855c540agw1ez4x0q5hjbj20p00dwtbq.jpg",
                          "http://ww2.sinaimg.cn/or360/855c540agw1ez4x0t5wyaj20p00dwtd0.jpg"]
     //mw1024,woriginal
-    var originalURL = [//"http://ww2.sinaimg.cn/woriginal/65dc76a3gw1f8xfl7vpj5j20p10dxtdk.jpg",
+    var originalURL = [
+                       "http://ww2.sinaimg.cn/woriginal/65dc76a3gw1f8xfl7vpj5j20p10dxtdk.jpg",
                        "http://ww4.sinaimg.cn/woriginal/855c540agw1ez4x0wycsvj20p00dwtck.jpg",
                        "http://ww2.sinaimg.cn/woriginal/855c540agw1ez4x0q5hjbj20p00dwtbq.jpg",
                        "http://ww2.sinaimg.cn/woriginal/855c540agw1ez4x0t5wyaj20p00dwtd0.jpg",]
     @IBOutlet weak var btn3: UIButton!
     @IBOutlet weak var btn2: UIButton!
     @IBOutlet weak var btn1: UIButton!
+    @IBOutlet weak var btn4: UIButton!
     convenience init() {
         self.init();
         
@@ -47,6 +50,8 @@ class ViewController: UIViewController {
         btn1.sd_setBackgroundImage(with:url(string:compressedURL[0]) , for: .normal, placeholderImage:UIImage(named:"Icon-180"))
         btn2.sd_setBackgroundImage(with:url(string:compressedURL[1]) , for: .normal,placeholderImage:UIImage(named:"Icon-180"))
         btn3.sd_setBackgroundImage(with:url(string:compressedURL[2]) , for: .normal,placeholderImage:UIImage(named:"Icon-180"))
+        btn4.sd_setBackgroundImage(with:url(string:compressedURL[3]) , for: .normal,placeholderImage:UIImage(named:"Icon-180"))
+
         btn1.setNeedsDisplay()
     }
     
@@ -79,6 +84,7 @@ class ViewController: UIViewController {
         browser.show()
 
     }
+    
     
 }
 
