@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XHs-UF-sO6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -7,83 +7,148 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="VDh-00-Yrs">
-            <objects>
-                <navigationController id="Saf-Ir-nJW" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zhh-PS-TGr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aDz-zl-AnD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-791" y="-17"/>
-        </scene>
         <!--View Controller-->
-        <scene sceneID="kYF-CZ-D52">
+        <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="XHs-UF-sO6" customClass="ViewController" customModule="THImageBrowser" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="THImageBrowser" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="lUs-eW-ykH"/>
-                        <viewControllerLayoutGuide type="bottom" id="fsm-nP-BFy"/>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="yVZ-my-7Ao">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jmf-2k-kTU" userLabel="b1">
+                            <imageView tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-180" translatesAutoresizingMaskIntoConstraints="NO" id="ITO-Ty-xQm" userLabel="Image View1">
+                                <gestureRecognizers/>
                                 <connections>
-                                    <action selector="showBroswer:" destination="XHs-UF-sO6" eventType="touchUpInside" id="1bU-hG-VjE"/>
+                                    <outletCollection property="gestureRecognizers" destination="X4B-oT-dt8" appends="YES" id="GLH-7e-Rj6"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nz5-I5-f4b" userLabel="b2">
+                            </imageView>
+                            <imageView tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-180" translatesAutoresizingMaskIntoConstraints="NO" id="hrb-Pe-qd2" userLabel="Image View2">
+                                <gestureRecognizers/>
                                 <connections>
-                                    <action selector="showBroswer:" destination="XHs-UF-sO6" eventType="touchUpInside" id="2ac-pH-0Tm"/>
+                                    <outletCollection property="gestureRecognizers" destination="T3I-oy-cgc" appends="YES" id="lu6-3T-xXH"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9M-it-Ud7" userLabel="b3">
+                            </imageView>
+                            <imageView tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-180" translatesAutoresizingMaskIntoConstraints="NO" id="W16-Vr-rTo" userLabel="Image View3">
+                                <gestureRecognizers/>
                                 <connections>
-                                    <action selector="showBroswer:" destination="XHs-UF-sO6" eventType="touchUpInside" id="MjK-vQ-IWZ"/>
+                                    <outletCollection property="gestureRecognizers" destination="hWs-vK-Qes" appends="YES" id="IQC-98-TFL"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUa-4g-doL" userLabel="b4">
+                            </imageView>
+                            <imageView tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-180" translatesAutoresizingMaskIntoConstraints="NO" id="6m3-Wm-jU3" userLabel="Image View4">
+                                <gestureRecognizers/>
                                 <connections>
-                                    <action selector="showBroswer:" destination="XHs-UF-sO6" eventType="touchUpInside" id="esY-FM-cVD"/>
+                                    <outletCollection property="gestureRecognizers" destination="Egk-vp-4no" appends="YES" id="zZZ-4i-CFn"/>
                                 </connections>
-                            </button>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="Jmf-2k-kTU" firstAttribute="height" secondItem="yVZ-my-7Ao" secondAttribute="height" multiplier="0.5" id="0Vj-UG-FKg"/>
-                            <constraint firstAttribute="trailing" secondItem="Jmf-2k-kTU" secondAttribute="trailing" id="1Ee-Ix-Pro"/>
-                            <constraint firstItem="nz5-I5-f4b" firstAttribute="top" secondItem="Jmf-2k-kTU" secondAttribute="bottom" constant="1" id="4M8-xo-5YU"/>
-                            <constraint firstItem="K9M-it-Ud7" firstAttribute="height" secondItem="nz5-I5-f4b" secondAttribute="height" multiplier="0.5" constant="2" id="AbT-Cm-CQq"/>
-                            <constraint firstItem="Jmf-2k-kTU" firstAttribute="top" secondItem="lUs-eW-ykH" secondAttribute="bottom" constant="-19" id="GdH-Uj-twm"/>
-                            <constraint firstItem="nz5-I5-f4b" firstAttribute="width" secondItem="yVZ-my-7Ao" secondAttribute="width" multiplier="0.5" id="Ssi-Qs-1cr"/>
-                            <constraint firstItem="K9M-it-Ud7" firstAttribute="leading" secondItem="nz5-I5-f4b" secondAttribute="trailing" constant="1" id="VWK-lX-g5m"/>
-                            <constraint firstItem="fsm-nP-BFy" firstAttribute="top" secondItem="nz5-I5-f4b" secondAttribute="bottom" id="W3g-cl-9hW"/>
-                            <constraint firstItem="pUa-4g-doL" firstAttribute="height" secondItem="K9M-it-Ud7" secondAttribute="height" id="Ygr-vY-j2i"/>
-                            <constraint firstItem="pUa-4g-doL" firstAttribute="top" secondItem="K9M-it-Ud7" secondAttribute="bottom" constant="1" id="dQP-XB-yoh"/>
-                            <constraint firstItem="nz5-I5-f4b" firstAttribute="leading" secondItem="Jmf-2k-kTU" secondAttribute="leading" id="fwi-oP-viV"/>
-                            <constraint firstItem="Jmf-2k-kTU" firstAttribute="width" secondItem="yVZ-my-7Ao" secondAttribute="width" id="jbw-MK-hzv"/>
-                            <constraint firstItem="pUa-4g-doL" firstAttribute="width" secondItem="K9M-it-Ud7" secondAttribute="width" id="kob-bx-Vep"/>
-                            <constraint firstItem="K9M-it-Ud7" firstAttribute="top" secondItem="Jmf-2k-kTU" secondAttribute="bottom" constant="1" id="mqO-Ye-QPk"/>
-                            <constraint firstItem="K9M-it-Ud7" firstAttribute="width" secondItem="nz5-I5-f4b" secondAttribute="width" id="pyu-Ar-nCl"/>
-                            <constraint firstItem="pUa-4g-doL" firstAttribute="leading" secondItem="K9M-it-Ud7" secondAttribute="leading" id="yMi-It-mvo"/>
+                            <constraint firstItem="ITO-Ty-xQm" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" constant="0.5" id="2Wm-ka-zXO"/>
+                            <constraint firstItem="ITO-Ty-xQm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5It-8Z-gKM"/>
+                            <constraint firstItem="6m3-Wm-jU3" firstAttribute="height" secondItem="W16-Vr-rTo" secondAttribute="height" id="GIH-uc-A4T"/>
+                            <constraint firstItem="hrb-Pe-qd2" firstAttribute="top" secondItem="ITO-Ty-xQm" secondAttribute="bottom" id="KUo-Up-AuY"/>
+                            <constraint firstItem="hrb-Pe-qd2" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="Rdv-kQ-Nqg"/>
+                            <constraint firstItem="ITO-Ty-xQm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VUS-Xy-aXR"/>
+                            <constraint firstItem="W16-Vr-rTo" firstAttribute="height" secondItem="hrb-Pe-qd2" secondAttribute="height" multiplier="0.5" id="Vcz-ts-kOV"/>
+                            <constraint firstItem="ITO-Ty-xQm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="Vqs-UH-J18"/>
+                            <constraint firstItem="W16-Vr-rTo" firstAttribute="width" secondItem="hrb-Pe-qd2" secondAttribute="width" id="WKc-Be-aao"/>
+                            <constraint firstItem="W16-Vr-rTo" firstAttribute="leading" secondItem="hrb-Pe-qd2" secondAttribute="trailing" id="ZXC-19-ebp"/>
+                            <constraint firstItem="6m3-Wm-jU3" firstAttribute="top" secondItem="W16-Vr-rTo" secondAttribute="bottom" id="arS-jw-dhd"/>
+                            <constraint firstItem="6m3-Wm-jU3" firstAttribute="width" secondItem="W16-Vr-rTo" secondAttribute="width" id="iEv-PA-7Q0"/>
+                            <constraint firstItem="W16-Vr-rTo" firstAttribute="top" secondItem="ITO-Ty-xQm" secondAttribute="bottom" id="kyV-OH-dti"/>
+                            <constraint firstItem="ITO-Ty-xQm" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="lod-7k-RE5"/>
+                            <constraint firstItem="6m3-Wm-jU3" firstAttribute="leading" secondItem="W16-Vr-rTo" secondAttribute="leading" id="mVO-lI-paI"/>
+                            <constraint firstItem="hrb-Pe-qd2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vZl-85-uf6"/>
+                            <constraint firstItem="hrb-Pe-qd2" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" constant="0.5" id="zi7-ts-Jvu"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="btn1" destination="Jmf-2k-kTU" id="YJ4-rr-95K"/>
-                        <outlet property="btn2" destination="nz5-I5-f4b" id="W6k-La-RcK"/>
-                        <outlet property="btn3" destination="K9M-it-Ud7" id="KHB-Zk-Mhl"/>
-                        <outlet property="btn4" destination="pUa-4g-doL" id="jN1-c4-rJP"/>
+                        <outlet property="v1" destination="ITO-Ty-xQm" id="KAU-rU-jSN"/>
+                        <outlet property="v2" destination="hrb-Pe-qd2" id="zZm-NC-ZUU"/>
+                        <outlet property="v3" destination="W16-Vr-rTo" id="2TA-qh-TDs"/>
+                        <outlet property="v4" destination="6m3-Wm-jU3" id="rk8-ku-Ib3"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zk7-9B-K2U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="X4B-oT-dt8">
+                    <connections>
+                        <action selector="showImage:" destination="BYZ-38-t0r" id="MH9-o1-tlb"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="T3I-oy-cgc">
+                    <connections>
+                        <action selector="showImage:" destination="BYZ-38-t0r" id="yYl-TH-Ev6"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="hWs-vK-Qes">
+                    <connections>
+                        <action selector="showImage:" destination="BYZ-38-t0r" id="Nu3-xy-Rin"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Egk-vp-4no">
+                    <connections>
+                        <action selector="showImage:" destination="BYZ-38-t0r" id="XxW-JX-8hu"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="410" y="16"/>
+            <point key="canvasLocation" x="136.80000000000001" y="118.29085457271366"/>
+        </scene>
+        <!--Broswer Page View Controller-->
+        <scene sceneID="vn0-08-bH1">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="k5a-oJ-6Na" customClass="BroswerPageViewController" customModule="THImageBrowser" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="70O-IJ-NJ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="756" y="36"/>
+        </scene>
+        <!--Browser Detail View Controller-->
+        <scene sceneID="6gj-OE-QAA">
+            <objects>
+                <viewController storyboardIdentifier="BrowserDetailViewController" id="soy-Q3-f7X" customClass="BrowserDetailViewController" customModule="THImageBrowser" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9OC-4O-IT9"/>
+                        <viewControllerLayoutGuide type="bottom" id="D26-cP-mGJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="p9g-dY-C0m">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jgn-cW-43B">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qkJ-Ty-4n4"/>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="qkJ-Ty-4n4" secondAttribute="trailing" id="6Sz-Fa-cSS"/>
+                                    <constraint firstItem="qkJ-Ty-4n4" firstAttribute="leading" secondItem="jgn-cW-43B" secondAttribute="leading" id="HOW-3z-QyV"/>
+                                    <constraint firstItem="qkJ-Ty-4n4" firstAttribute="centerX" secondItem="jgn-cW-43B" secondAttribute="centerX" id="ILi-eL-jK2"/>
+                                    <constraint firstAttribute="bottom" secondItem="qkJ-Ty-4n4" secondAttribute="bottom" id="dDx-Ik-9JU"/>
+                                    <constraint firstItem="qkJ-Ty-4n4" firstAttribute="centerY" secondItem="jgn-cW-43B" secondAttribute="centerY" id="qdZ-ww-yNU"/>
+                                    <constraint firstItem="qkJ-Ty-4n4" firstAttribute="top" secondItem="jgn-cW-43B" secondAttribute="top" id="uMs-Fe-rPe"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="jgn-cW-43B" secondAttribute="trailing" id="HhT-iT-Tud"/>
+                            <constraint firstItem="D26-cP-mGJ" firstAttribute="top" secondItem="jgn-cW-43B" secondAttribute="bottom" id="Yck-cP-2mL"/>
+                            <constraint firstItem="jgn-cW-43B" firstAttribute="top" secondItem="9OC-4O-IT9" secondAttribute="bottom" id="eGY-4b-jJh"/>
+                            <constraint firstItem="jgn-cW-43B" firstAttribute="leading" secondItem="p9g-dY-C0m" secondAttribute="leading" id="xhQ-G2-Pb3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mainScrollView" destination="jgn-cW-43B" id="KcP-mw-OoL"/>
+                        <outlet property="showImageView" destination="qkJ-Ty-4n4" id="0SS-Na-Kbx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Coa-2Z-Nq0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1441" y="36"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Icon-180" width="180" height="180"/>
+    </resources>
 </document>

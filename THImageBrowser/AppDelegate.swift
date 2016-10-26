@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  HYImageBrowser
+//  THImageBrowser
 //
-//  Created by huangyuan on 9/21/16.
-//  Copyright © 2016 tuhu. All rights reserved.
+//  Created by Apple on 16/10/25.
+//  Copyright © 2016年 Tsao. All rights reserved.
 //
 
 import UIKit

@@ -7,48 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1C09A13D1DB70911005F3CAA /* THImageBroswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C09A13C1DB70911005F3CAA /* THImageBroswer.swift */; };
-		1C09A1471DB72626005F3CAA /* MMUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C09A1461DB72626005F3CAA /* MMUtils.swift */; };
-		1C2EF0B81D98D38800E46390 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2EF0AB1D98D38800E46390 /* AppDelegate.swift */; };
 		1C2EF0B91D98D38800E46390 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C2EF0AC1D98D38800E46390 /* Assets.xcassets */; };
-		1C2EF0BA1D98D38800E46390 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C2EF0AE1D98D38800E46390 /* LaunchScreen.storyboard */; };
-		1C2EF0BB1D98D38800E46390 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C2EF0B01D98D38800E46390 /* Main.storyboard */; };
-		1C2EF0BC1D98D38800E46390 /* BViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2EF0B21D98D38800E46390 /* BViewController.swift */; };
 		1C2EF0BF1D98D38800E46390 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1C2EF0B61D98D38800E46390 /* Info.plist */; };
-		1C2EF0C01D98D38800E46390 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2EF0B71D98D38800E46390 /* ViewController.swift */; };
 		1C2EF0C41D98E27400E46390 /* FadeInNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2EF0C21D98E27400E46390 /* FadeInNavigationDelegate.swift */; };
 		1C2EF0C51D98E27400E46390 /* FadeInTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2EF0C31D98E27400E46390 /* FadeInTransition.swift */; };
-		1C4C1DD41DB8DA1600D1A7EA /* ImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4C1DD11DB8DA1600D1A7EA /* ImageViewer.swift */; };
-		1C4C1DD51DB8DA1600D1A7EA /* ImageViewer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C4C1DD21DB8DA1600D1A7EA /* ImageViewer.xib */; };
-		1C4C1DD91DB8DAB400D1A7EA /* ScaleUIImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C4C1DD81DB8DAB400D1A7EA /* ScaleUIImageView.m */; };
-		1C4C1DDC1DB8DEDE00D1A7EA /* UIGestureRecognizer+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C4C1DDB1DB8DEDE00D1A7EA /* UIGestureRecognizer+Block.m */; };
+		1C7931B61DC084FD00C8D1AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7931AF1DC084FD00C8D1AB /* AppDelegate.swift */; };
+		1C7931BB1DC084FD00C8D1AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7931B51DC084FD00C8D1AB /* ViewController.swift */; };
+		1C7931C01DC085B300C8D1AB /* BrowserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7931BD1DC085B300C8D1AB /* BrowserDetailViewController.swift */; };
+		1C7931C11DC085B300C8D1AB /* BrowserPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7931BE1DC085B300C8D1AB /* BrowserPageViewController.swift */; };
+		1C7931C21DC085B300C8D1AB /* BrowserViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7931BF1DC085B300C8D1AB /* BrowserViewable.swift */; };
+		1C7931C71DC085C500C8D1AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C7931C31DC085C500C8D1AB /* LaunchScreen.storyboard */; };
+		1C7931C81DC085C500C8D1AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C7931C51DC085C500C8D1AB /* Main.storyboard */; };
 		1CB0F6DE1DB74319001AFA74 /* Icon-180.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CB0F6DD1DB74319001AFA74 /* Icon-180.png */; };
-		1CD6CA991DAF9D1100F0B812 /* THBImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD6CA981DAF9D1100F0B812 /* THBImageView.swift */; };
 		1CF394061D92F89F00DF11FF /* infogather_boy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CF394051D92F89F00DF11FF /* infogather_boy@2x.png */; };
 		2C480811FB68F8F67C476EF6 /* Pods_THImageBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE85CEB444397D110C605D70 /* Pods_THImageBrowser.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1C09A13C1DB70911005F3CAA /* THImageBroswer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = THImageBroswer.swift; path = THImageBrowser/THImageBroswer.swift; sourceTree = SOURCE_ROOT; };
-		1C09A1461DB72626005F3CAA /* MMUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MMUtils.swift; path = THImageBrowser/MMUtils.swift; sourceTree = SOURCE_ROOT; };
-		1C2EF0AB1D98D38800E46390 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = THImageBrowser/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		1C2EF0AC1D98D38800E46390 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = THImageBrowser/Assets.xcassets; sourceTree = SOURCE_ROOT; };
-		1C2EF0AF1D98D38800E46390 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		1C2EF0B11D98D38800E46390 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
-		1C2EF0B21D98D38800E46390 /* BViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BViewController.swift; path = THImageBrowser/BViewController.swift; sourceTree = SOURCE_ROOT; };
 		1C2EF0B61D98D38800E46390 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = THImageBrowser/Info.plist; sourceTree = SOURCE_ROOT; };
-		1C2EF0B71D98D38800E46390 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = THImageBrowser/ViewController.swift; sourceTree = SOURCE_ROOT; };
 		1C2EF0C21D98E27400E46390 /* FadeInNavigationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeInNavigationDelegate.swift; sourceTree = "<group>"; };
 		1C2EF0C31D98E27400E46390 /* FadeInTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeInTransition.swift; sourceTree = "<group>"; };
-		1C4C1DD11DB8DA1600D1A7EA /* ImageViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageViewer.swift; path = THImageBrowser/ImageViewer.swift; sourceTree = SOURCE_ROOT; };
-		1C4C1DD21DB8DA1600D1A7EA /* ImageViewer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImageViewer.xib; path = THImageBrowser/ImageViewer.xib; sourceTree = SOURCE_ROOT; };
-		1C4C1DD31DB8DA1600D1A7EA /* ScaleUIImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScaleUIImageView.h; path = THImageBrowser/ScaleUIImageView.h; sourceTree = SOURCE_ROOT; };
-		1C4C1DD71DB8DAB300D1A7EA /* THImageBrowser-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "THImageBrowser-Bridging-Header.h"; sourceTree = "<group>"; };
-		1C4C1DD81DB8DAB400D1A7EA /* ScaleUIImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScaleUIImageView.m; path = THImageBrowser/ScaleUIImageView.m; sourceTree = SOURCE_ROOT; };
-		1C4C1DDA1DB8DEDE00D1A7EA /* UIGestureRecognizer+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIGestureRecognizer+Block.h"; path = "THImageBrowser/UIGestureRecognizer+Block.h"; sourceTree = SOURCE_ROOT; };
-		1C4C1DDB1DB8DEDE00D1A7EA /* UIGestureRecognizer+Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIGestureRecognizer+Block.m"; path = "THImageBrowser/UIGestureRecognizer+Block.m"; sourceTree = SOURCE_ROOT; };
+		1C7931AF1DC084FD00C8D1AB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = THImageBrowser/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		1C7931B31DC084FD00C8D1AB /* THImageBroswer-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "THImageBroswer-Bridging-Header.h"; path = "THImageBrowser/THImageBroswer-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		1C7931B51DC084FD00C8D1AB /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = THImageBrowser/ViewController.swift; sourceTree = SOURCE_ROOT; };
+		1C7931BD1DC085B300C8D1AB /* BrowserDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrowserDetailViewController.swift; path = THImageBrowser/THImageBroswer/BrowserDetailViewController.swift; sourceTree = SOURCE_ROOT; };
+		1C7931BE1DC085B300C8D1AB /* BrowserPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrowserPageViewController.swift; path = THImageBrowser/THImageBroswer/BrowserPageViewController.swift; sourceTree = SOURCE_ROOT; };
+		1C7931BF1DC085B300C8D1AB /* BrowserViewable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrowserViewable.swift; path = THImageBrowser/THImageBroswer/BrowserViewable.swift; sourceTree = SOURCE_ROOT; };
+		1C7931C41DC085C500C8D1AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1C7931C61DC085C500C8D1AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 		1CB0F6DD1DB74319001AFA74 /* Icon-180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-180.png"; sourceTree = "<group>"; };
-		1CD6CA981DAF9D1100F0B812 /* THBImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = THBImageView.swift; path = THImageBrowser/THBImageView.swift; sourceTree = SOURCE_ROOT; };
 		1CF393EA1D92C62C00DF11FF /* THImageBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = THImageBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CF394051D92F89F00DF11FF /* infogather_boy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "infogather_boy@2x.png"; sourceTree = "<group>"; };
 		89F6850B99D6B24FC987B031 /* Pods-HYImageBrowser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYImageBrowser.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HYImageBrowser/Pods-HYImageBrowser.debug.xcconfig"; sourceTree = "<group>"; };
@@ -73,8 +61,8 @@
 		1C2EF0AD1D98D38800E46390 /* Base.lproj */ = {
 			isa = PBXGroup;
 			children = (
-				1C2EF0AE1D98D38800E46390 /* LaunchScreen.storyboard */,
-				1C2EF0B01D98D38800E46390 /* Main.storyboard */,
+				1C7931C31DC085C500C8D1AB /* LaunchScreen.storyboard */,
+				1C7931C51DC085C500C8D1AB /* Main.storyboard */,
 			);
 			name = Base.lproj;
 			path = THImageBrowser/Base.lproj;
@@ -90,19 +78,14 @@
 			path = THImageBrowser/Transition;
 			sourceTree = SOURCE_ROOT;
 		};
-		1C4C1DD61DB8DA1E00D1A7EA /* New Group */ = {
+		1C7931BC1DC085A300C8D1AB /* THImageBrowser */ = {
 			isa = PBXGroup;
 			children = (
-				1C4C1DDA1DB8DEDE00D1A7EA /* UIGestureRecognizer+Block.h */,
-				1C4C1DDB1DB8DEDE00D1A7EA /* UIGestureRecognizer+Block.m */,
-				1C4C1DD31DB8DA1600D1A7EA /* ScaleUIImageView.h */,
-				1C4C1DD81DB8DAB400D1A7EA /* ScaleUIImageView.m */,
-				1C09A13C1DB70911005F3CAA /* THImageBroswer.swift */,
-				1C4C1DD11DB8DA1600D1A7EA /* ImageViewer.swift */,
-				1C4C1DD21DB8DA1600D1A7EA /* ImageViewer.xib */,
-				1C4C1DD71DB8DAB300D1A7EA /* THImageBrowser-Bridging-Header.h */,
+				1C7931BD1DC085B300C8D1AB /* BrowserDetailViewController.swift */,
+				1C7931BE1DC085B300C8D1AB /* BrowserPageViewController.swift */,
+				1C7931BF1DC085B300C8D1AB /* BrowserViewable.swift */,
 			);
-			name = "New Group";
+			name = THImageBrowser;
 			sourceTree = "<group>";
 		};
 		1CF393E11D92C62B00DF11FF = {
@@ -129,15 +112,13 @@
 		1CF393EC1D92C62C00DF11FF /* THImageBrowser */ = {
 			isa = PBXGroup;
 			children = (
-				1C4C1DD61DB8DA1E00D1A7EA /* New Group */,
+				1C7931BC1DC085A300C8D1AB /* THImageBrowser */,
+				1C7931AF1DC084FD00C8D1AB /* AppDelegate.swift */,
+				1C7931B51DC084FD00C8D1AB /* ViewController.swift */,
 				1C2EF0C11D98E27400E46390 /* Transition */,
 				1C2EF0AC1D98D38800E46390 /* Assets.xcassets */,
-				1C2EF0AB1D98D38800E46390 /* AppDelegate.swift */,
-				1C2EF0B21D98D38800E46390 /* BViewController.swift */,
-				1C2EF0B71D98D38800E46390 /* ViewController.swift */,
-				1C09A1461DB72626005F3CAA /* MMUtils.swift */,
+				1C7931B31DC084FD00C8D1AB /* THImageBroswer-Bridging-Header.h */,
 				1C2EF0AD1D98D38800E46390 /* Base.lproj */,
-				1CD6CA981DAF9D1100F0B812 /* THBImageView.swift */,
 			);
 			name = THImageBrowser;
 			path = HYImageBrowser;
@@ -197,6 +178,7 @@
 				TargetAttributes = {
 					1CF393E91D92C62C00DF11FF = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 48X32H492E;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
@@ -226,11 +208,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C2EF0BF1D98D38800E46390 /* Info.plist in Resources */,
-				1C2EF0BB1D98D38800E46390 /* Main.storyboard in Resources */,
 				1CF394061D92F89F00DF11FF /* infogather_boy@2x.png in Resources */,
-				1C4C1DD51DB8DA1600D1A7EA /* ImageViewer.xib in Resources */,
-				1C2EF0BA1D98D38800E46390 /* LaunchScreen.storyboard in Resources */,
 				1CB0F6DE1DB74319001AFA74 /* Icon-180.png in Resources */,
+				1C7931C81DC085C500C8D1AB /* Main.storyboard in Resources */,
+				1C7931C71DC085C500C8D1AB /* LaunchScreen.storyboard in Resources */,
 				1C2EF0B91D98D38800E46390 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,35 +271,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C2EF0C01D98D38800E46390 /* ViewController.swift in Sources */,
-				1C2EF0BC1D98D38800E46390 /* BViewController.swift in Sources */,
-				1CD6CA991DAF9D1100F0B812 /* THBImageView.swift in Sources */,
-				1C09A1471DB72626005F3CAA /* MMUtils.swift in Sources */,
-				1C2EF0B81D98D38800E46390 /* AppDelegate.swift in Sources */,
+				1C7931B61DC084FD00C8D1AB /* AppDelegate.swift in Sources */,
+				1C7931C01DC085B300C8D1AB /* BrowserDetailViewController.swift in Sources */,
 				1C2EF0C51D98E27400E46390 /* FadeInTransition.swift in Sources */,
-				1C4C1DD41DB8DA1600D1A7EA /* ImageViewer.swift in Sources */,
-				1C09A13D1DB70911005F3CAA /* THImageBroswer.swift in Sources */,
+				1C7931BB1DC084FD00C8D1AB /* ViewController.swift in Sources */,
+				1C7931C21DC085B300C8D1AB /* BrowserViewable.swift in Sources */,
+				1C7931C11DC085B300C8D1AB /* BrowserPageViewController.swift in Sources */,
 				1C2EF0C41D98E27400E46390 /* FadeInNavigationDelegate.swift in Sources */,
-				1C4C1DD91DB8DAB400D1A7EA /* ScaleUIImageView.m in Sources */,
-				1C4C1DDC1DB8DEDE00D1A7EA /* UIGestureRecognizer+Block.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1C2EF0AE1D98D38800E46390 /* LaunchScreen.storyboard */ = {
+		1C7931C31DC085C500C8D1AB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1C2EF0AF1D98D38800E46390 /* Base */,
+				1C7931C41DC085C500C8D1AB /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		1C2EF0B01D98D38800E46390 /* Main.storyboard */ = {
+		1C7931C51DC085C500C8D1AB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1C2EF0B11D98D38800E46390 /* Base */,
+				1C7931C61DC085C500C8D1AB /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -423,13 +400,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 48X32H492E;
 				INFOPLIST_FILE = THImageBrowser/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.hyDev.THImageBrowser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "THImageBrowser-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -441,13 +418,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 48X32H492E;
 				INFOPLIST_FILE = THImageBrowser/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.hyDev.THImageBrowser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "THImageBrowser-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
