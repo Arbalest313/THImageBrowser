@@ -38,6 +38,7 @@ class BrowserDetailViewController: UIViewController, BrowserVCHandler {
         showImageView.addGestureRecognizer(singleTap)
         
         showImageView.isUserInteractionEnabled = true
+        showImageView.backgroundColor = UIColor.red
         
         mainScrollView.delegate = self
         mainScrollView.maximumZoomScale = 3.0
@@ -63,9 +64,6 @@ class BrowserDetailViewController: UIViewController, BrowserVCHandler {
         
         // 双击：如果未放大，则放大两倍；否则，缩小为原图大小
         if self.mainScrollView.zoomScale == 1.0 {
-//            print("imageHeight is \(self.imageHeight)")
-//            print("imageViewHeight is \(self.showImageView.frame.size.height)")
-//            print("touchCenter is \(touchCenter.y)")
             
             let touchCenter = tap.location(in: tap.view)
             
@@ -164,14 +162,16 @@ extension BrowserDetailViewController {
             return CGPoint(x: 0, y: 0)
         }
         
-        let actualImageY = actualImageHeight / 2
+        let actualImageY = (self.showImageView.bounds.size.height - actualImageHeight) / 2
+        
         // 双击区域在图片上方空白处，需作调整，调整touchCenter数值
         if center.y > 0 && center.y < actualImageY {
             center.y = self.showImageView.bounds.size.height / 2
         }
         
+        let actualImageMaxY = (self.showImageView.bounds.size.height + actualImageHeight) / 2
         // 双击区域在图片下方空白处，需作调整，调整touchCenter数值
-        if center.y > actualImageHeight && center.y < self.showImageView.bounds.size.height {
+        if center.y > actualImageMaxY && center.y < self.showImageView.bounds.size.height {
             center.y = self.showImageView.bounds.size.height / 2
         }
         
