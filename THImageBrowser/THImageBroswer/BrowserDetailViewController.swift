@@ -8,11 +8,15 @@
 
 import UIKit
 
-typealias SingleTapBlock = () -> Void
+let screenBounds = UIScreen.main.bounds
 
 class BrowserDetailViewController: UIViewController, BrowserVCHandler {
     @IBOutlet weak var showImageView: UIImageView!
     @IBOutlet weak var mainScrollView: UIScrollView!
+    
+    private var imageWidth: CGFloat = screenBounds.size.width
+    fileprivate var imageHeight: CGFloat?
+    
     // 数据模型
     var dataModel: BrowserViewable?
     var dismissSelf:((_ fadeOutView:UIView) -> Void)?
@@ -21,7 +25,14 @@ class BrowserDetailViewController: UIViewController, BrowserVCHandler {
         super.viewDidLoad()
         view.backgroundColor = UIColor.black
         if let model = dataModel, let urlStr = model.imageUrl, let url = URL(string: urlStr) {
-            showImageView.sd_setImage(with: url)
+            showImageView.sd_setImage(with: url, completed: { (image, error, cacheType, url) in
+                if let realImageWidth = image?.size.width, let realImageHeight = image?.size.height {
+                    guard realImageWidth != 0 && realImageHeight != 0 else {
+                        return
+                    }
+                    self.imageHeight = self.imageWidth / realImageWidth * realImageHeight
+                }
+            })
         }
         let singleTap = UITapGestureRecognizer(target: self, action: #selector(BrowserDetailViewController.dismiss as (BrowserDetailViewController) -> () -> ()))
         showImageView.addGestureRecognizer(singleTap)
@@ -46,15 +57,22 @@ class BrowserDetailViewController: UIViewController, BrowserVCHandler {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.mainScrollView.setZoomScale(1.0, animated: true)
     }
     
     func doubleTapHandle(tap: UIGestureRecognizer) {
         
         // 双击：如果未放大，则放大两倍；否则，缩小为原图大小
         if self.mainScrollView.zoomScale == 1.0 {
-            let zoomRect = self.zoomRect(forScale: 2.0, withCenter: tap.location(in: tap.view))
+//            print("imageHeight is \(self.imageHeight)")
+//            print("imageViewHeight is \(self.showImageView.frame.size.height)")
+//            print("touchCenter is \(touchCenter.y)")
+            
+            let touchCenter = tap.location(in: tap.view)
+            
+            let zoomRect = self.zoomRect(forScale: 2.0, withCenter: touchCenter)
             self.mainScrollView.zoom(to: zoomRect, animated: true)
+            
+            
         } else {
             self.mainScrollView.setZoomScale(1.0, animated: true)
         }
@@ -82,28 +100,82 @@ extension BrowserDetailViewController: UIScrollViewDelegate {
         return self.showImageView
     }
     
+//    func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
+        
+        
+        
+//        if self.mainScrollView.zoomScale == 1.0 {
+            
+//            let pinch = scrollView.pinchGestureRecognizer
+            
+//            if let pinchPoint = pinch?.location(in: pinch?.view) {
+//                let adjustPinchCenter = self.adjustScaleCenter(withCenter: pinchPoint)
+                
+//                let zoomRect = self.zoomRect(forScale: 2.0, withCenter: adjustPinchCenter)
+//                self.mainScrollView.zoom(to: zoomRect, animated: true)
+//            }
+            
+            
+            
+//        }
+        
+//    }
+    
     func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
         if scale < 1.0 {
             UIView.animate(withDuration: 0.5, animations: {
                 self.mainScrollView.zoomScale = 1.0
             })
         }
+        
     }
     
 }
 
 extension BrowserDetailViewController {
     func zoomRect(forScale scale: CGFloat, withCenter center: CGPoint) -> CGRect {
+        
+        // 调整可能点击图片空白区域的center
+        let adjustCenter = self.adjustScaleCenter(withCenter: center)
+        
+        
+        
+        
         var tempRect: CGRect = CGRect(x: 0, y: 0, width: 0, height: 0)
         tempRect.size.height = showImageView.frame.height / scale
         tempRect.size.width = showImageView.frame.width / scale
         
-        let tempCenter = showImageView.convert(center, from: self.mainScrollView)
+        let zoomCenter = showImageView.convert(adjustCenter, from: self.mainScrollView)
         
-        tempRect.origin.x = tempCenter.x - (tempRect.size.width / 2.0)
-        tempRect.origin.y = tempCenter.y - (tempRect.size.height / 2.0)
+        tempRect.origin.x = zoomCenter.x - (tempRect.size.width / 2.0)
+        tempRect.origin.y = zoomCenter.y - (tempRect.size.height / 2.0)
         
         return tempRect
         
+    }
+    
+    
+    
+    func adjustScaleCenter(withCenter touchCenter: CGPoint) -> CGPoint {
+        
+        var center = touchCenter
+        
+        guard let actualImageHeight = self.imageHeight else {
+            return CGPoint(x: 0, y: 0)
+        }
+        
+        let actualImageY = actualImageHeight / 2
+        // 双击区域在图片上方空白处，需作调整，调整touchCenter数值
+        if center.y > 0 && center.y < actualImageY {
+            center.y = self.showImageView.bounds.size.height / 2
+        }
+        
+        // 双击区域在图片下方空白处，需作调整，调整touchCenter数值
+        if center.y > actualImageHeight && center.y < self.showImageView.bounds.size.height {
+            center.y = self.showImageView.bounds.size.height / 2
+        }
+        
+        return center
+
     }
 }

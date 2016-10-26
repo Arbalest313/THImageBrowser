@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     //thumb300,or360
     var compressedURL = [
         "http://ww4.sinaimg.cn/or480/6ba7ecc9gw1f93x6ua5cnj21kw11xdtk.jpg",
+        "http://ww3.sinaimg.cn/or480/7828dd47jw1f94xrskwvhj20u00u0god.jpg",
         "http://ww2.sinaimg.cn/or480/6ba7ecc9gw1f93x9rc2zwj21kw11xdq6.jpg",
         "http://ww2.sinaimg.cn/or480/6ba7ecc9gw1f93x6lhk6lj21kw11xgvz.jpg",
         "http://ww4.sinaimg.cn/or480/6ba7ecc9gw1f93x708zbij21kw11xdt7.jpg",
@@ -26,6 +27,7 @@ class ViewController: UIViewController {
     //mw1024,woriginal
     var originalURL = [
         "http://ww4.sinaimg.cn/woriginal/6ba7ecc9gw1f93x6ua5cnj21kw11xdtk.jpg",
+        "http://ww3.sinaimg.cn/woriginal/7828dd47jw1f94xrskwvhj20u00u0god.jpg",
         "http://ww2.sinaimg.cn/woriginal/6ba7ecc9gw1f93x9rc2zwj21kw11xdq6.jpg",
         "http://ww2.sinaimg.cn/woriginal/6ba7ecc9gw1f93x6lhk6lj21kw11xgvz.jpg",
         "http://ww4.sinaimg.cn/woriginal/6ba7ecc9gw1f93x708zbij21kw11xdt7.jpg",
