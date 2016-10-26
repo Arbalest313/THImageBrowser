@@ -43,7 +43,6 @@ class BrowserDetailViewController: UIViewController, BrowserVCHandler {
         self.view.addGestureRecognizer(longpressGesutre)
 
         showImageView.isUserInteractionEnabled = true
-        showImageView.backgroundColor = UIColor.red
         
         mainScrollView.delegate = self
         mainScrollView.maximumZoomScale = 3.0
@@ -138,27 +137,7 @@ extension BrowserDetailViewController: UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return self.showImageView
     }
-    
-//    func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
-        
-        
-        
-//        if self.mainScrollView.zoomScale == 1.0 {
-            
-//            let pinch = scrollView.pinchGestureRecognizer
-            
-//            if let pinchPoint = pinch?.location(in: pinch?.view) {
-//                let adjustPinchCenter = self.adjustScaleCenter(withCenter: pinchPoint)
-                
-//                let zoomRect = self.zoomRect(forScale: 2.0, withCenter: adjustPinchCenter)
-//                self.mainScrollView.zoom(to: zoomRect, animated: true)
-//            }
-            
-            
-            
-//        }
-        
-//    }
+
     
     func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
         if scale < 1.0 {
