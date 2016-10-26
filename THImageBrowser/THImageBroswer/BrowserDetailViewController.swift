@@ -37,6 +37,11 @@ class BrowserDetailViewController: UIViewController, BrowserVCHandler {
         let singleTap = UITapGestureRecognizer(target: self, action: #selector(BrowserDetailViewController.dismiss as (BrowserDetailViewController) -> () -> ()))
         showImageView.addGestureRecognizer(singleTap)
         
+        //长按手势
+        let longpressGesutre = UILongPressGestureRecognizer(target: self, action: #selector(BrowserDetailViewController.handleLongpressGesture as (BrowserDetailViewController) -> () -> ()))
+        longpressGesutre.numberOfTouchesRequired = 1
+        self.view.addGestureRecognizer(longpressGesutre)
+
         showImageView.isUserInteractionEnabled = true
         
         mainScrollView.delegate = self
@@ -89,10 +94,46 @@ class BrowserDetailViewController: UIViewController, BrowserVCHandler {
             dismissSelf(showImageView)
         }
     }
-    
+    //长按  弹出Action
+    func handleLongpressGesture () {
+        let actionSheet = UIActionSheet()
+        actionSheet.addButton(withTitle: "取消")
+        actionSheet.addButton(withTitle: "保存图片")
+        actionSheet.cancelButtonIndex = 0
+        actionSheet.delegate = self
+        actionSheet.show(in: self.view)
+    }
     
 }
 
+// MARK: - Action代理
+extension BrowserDetailViewController: UIActionSheetDelegate {
+    func actionSheet(_ actionSheet: UIActionSheet, clickedButtonAt buttonIndex: Int) {
+        
+        if buttonIndex == 1 {
+            //保存图片
+            let img = showImageView.image
+            saveImageToAlbum(image: img!)
+        }
+    }
+    
+    func saveImageToAlbum(image: UIImage) {
+        UIImageWriteToSavedPhotosAlbum(showImageView.image!, self,  #selector(BrowserDetailViewController.image(image:didFinishSavingWithError:contextInfo:)) , nil)
+    }
+    
+    @objc func image(image: UIImage, didFinishSavingWithError: NSError?,contextInfo: AnyObject)
+    {
+        var title: String!
+        if didFinishSavingWithError != nil
+        {
+            title = "图片保存失败"
+        } else {
+            title = "图片保存成功"
+        }
+        let myAlert = UIAlertView(title: title, message: nil, delegate: nil, cancelButtonTitle: "OK")
+        myAlert.show()
+    }
+}
 
 extension BrowserDetailViewController: UIScrollViewDelegate {
     
