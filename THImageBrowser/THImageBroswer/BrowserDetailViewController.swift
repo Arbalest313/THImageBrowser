@@ -45,7 +45,7 @@ class BrowserDetailViewController: UIViewController, BrowserVCHandler {
         showImageView.isUserInteractionEnabled = true
         
         mainScrollView.delegate = self
-        mainScrollView.maximumZoomScale = 3.0
+        mainScrollView.maximumZoomScale = 2.0
         mainScrollView.minimumZoomScale = 0.5
         
         showImageView.contentMode = .scaleAspectFit
@@ -57,6 +57,12 @@ class BrowserDetailViewController: UIViewController, BrowserVCHandler {
         showImageView.addGestureRecognizer(doubleTap)
         
         singleTap.require(toFail: doubleTap)
+        
+        
+//        self.mainScrollView.pinchGestureRecognizer?.isEnabled = false
+        
+//        let pinch = UITapGestureRecognizer(target: self, action: #selector(pinchHandle(pinch:)))
+//        self.showImageView.addGestureRecognizer(pinch)
         
     }
     
@@ -74,13 +80,16 @@ class BrowserDetailViewController: UIViewController, BrowserVCHandler {
             let zoomRect = self.zoomRect(forScale: 2.0, withCenter: touchCenter)
             self.mainScrollView.zoom(to: zoomRect, animated: true)
             
-            
         } else {
             self.mainScrollView.setZoomScale(1.0, animated: true)
         }
-        
-        
     }
+    
+//    func pinchHandle(pinch: UIGestureRecognizer) {
+//        let pinchPoint =  pinch.location(in: pinch.view)
+//        let zoomRect = self.zoomRect(forScale: 2.0, withCenter: pinchPoint)
+//        self.mainScrollView.zoom(to: zoomRect, animated: true)
+//    }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return UIStatusBarStyle.default
@@ -137,14 +146,13 @@ extension BrowserDetailViewController: UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return self.showImageView
     }
-
     
     func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
         if scale < 1.0 {
-            UIView.animate(withDuration: 0.5, animations: {
-                self.mainScrollView.zoomScale = 1.0
-            })
+            
+            self.mainScrollView.setZoomScale(1.0, animated: true)
         }
+        
         
     }
     
@@ -155,8 +163,6 @@ extension BrowserDetailViewController {
         
         // 调整可能点击图片空白区域的center
         let adjustCenter = self.adjustScaleCenter(withCenter: center)
-        
-        
         
         
         var tempRect: CGRect = CGRect(x: 0, y: 0, width: 0, height: 0)
@@ -178,24 +184,49 @@ extension BrowserDetailViewController {
         
         var center = touchCenter
         
-        guard let actualImageHeight = self.imageHeight else {
+        guard let _ = self.imageHeight else {
             return CGPoint(x: 0, y: 0)
         }
         
-        let actualImageY = (self.showImageView.bounds.size.height - actualImageHeight) / 2
-        
-        // 双击区域在图片上方空白处，需作调整，调整touchCenter数值
-        if center.y > 0 && center.y < actualImageY {
-            center.y = self.showImageView.bounds.size.height / 2
-        }
-        
-        let actualImageMaxY = (self.showImageView.bounds.size.height + actualImageHeight) / 2
-        // 双击区域在图片下方空白处，需作调整，调整touchCenter数值
-        if center.y > actualImageMaxY && center.y < self.showImageView.bounds.size.height {
+        if self.isOperatingOnBlankArea(withCenter: center) {
             center.y = self.showImageView.bounds.size.height / 2
         }
         
         return center
 
     }
+    
+    func isOperatingOnBlankArea(withCenter operateCenter: CGPoint) -> Bool {
+        
+        if let actualImageHeight = self.imageHeight {
+            let actualImageY = (self.showImageView.bounds.size.height - actualImageHeight) / 2
+            
+            // 交互区域在图片上方空白处
+            if operateCenter.y > 0 && operateCenter.y < actualImageY {
+                return true
+            }
+            
+            let actualImageMaxY = (self.showImageView.bounds.size.height + actualImageHeight) / 2
+            // 交互区域在图片下方空白处
+            if operateCenter.y > actualImageMaxY && operateCenter.y < self.showImageView.bounds.size.height {
+                return true
+            }
+        }
+        
+        return false
+
+    }
 }
+
+
+// extension BrowserDetailViewController: UIGestureRecognizerDelegate {
+//    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        
+//        let operatePoint = gestureRecognizer.location(in: gestureRecognizer.view)
+//        if self.isOperatingOnBlankArea(withCenter: operatePoint) {
+//            return false
+//        }
+        
+//        return true
+//    }
+// }
