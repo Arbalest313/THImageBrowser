@@ -19,6 +19,8 @@ class BrowserDetailViewController: UIViewController, BrowserVCHandler {
     
     // 数据模型
     var dataModel: BrowserViewable?
+    var actionSheet = UIActionSheet()
+    
     var dismissSelf:((_ fadeOutView:UIView) -> Void)?
     
     override func viewDidLoad() {
@@ -102,7 +104,6 @@ class BrowserDetailViewController: UIViewController, BrowserVCHandler {
     }
     //长按  弹出Action
     func handleLongpressGesture () {
-        let actionSheet = UIActionSheet()
         actionSheet.addButton(withTitle: "取消")
         actionSheet.addButton(withTitle: "保存图片")
         actionSheet.cancelButtonIndex = 0
