@@ -171,6 +171,7 @@ extension BrowserDetailViewController: UIScrollViewDelegate {
         }
 //        print("size:<<<\(mainScrollView.contentSize)\n offset\(mainScrollView.contentOffset)")
         
+        
     }
 }
 
@@ -252,3 +253,14 @@ extension BrowserDetailViewController {
 }
 
 
+// extension BrowserDetailViewController: UIGestureRecognizerDelegate {
+//    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        
+//        let operatePoint = gestureRecognizer.location(in: gestureRecognizer.view)
+//        if self.isOperatingOnBlankArea(withCenter: operatePoint) {
+//            return false
+//        }
+        
+//        return true
+//    }
+// }
