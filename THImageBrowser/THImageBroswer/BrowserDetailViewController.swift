@@ -91,6 +91,7 @@ class BrowserDetailViewController: UIViewController, BrowserVCHandler {
             dismissSelf(showImageView)
         }
     }
+    
     //长按  弹出Action
     func handleLongpressGesture () {
         let actionSheet = UIActionSheet()
@@ -138,7 +139,6 @@ extension BrowserDetailViewController: UIScrollViewDelegate {
         return self.showImageView
     }
 
-    
     func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
         if scale < 1.0 {
             UIView.animate(withDuration: 0.5, animations: {

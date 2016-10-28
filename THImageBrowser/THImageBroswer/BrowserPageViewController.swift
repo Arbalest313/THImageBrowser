@@ -9,7 +9,7 @@
 import UIKit
 import PureLayout
 import SDWebImage
-let kFadeInOutDuration = 1.0
+let kFadeInOutDuration = 0.6
 
 // 所有PageViewController下的滑动子Controller需要实现的方法和属性
 protocol BrowserVCHandler {
@@ -33,27 +33,21 @@ class BrowserPageViewController: UIPageViewController {
             return 0
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.dataSource = self
         view.backgroundColor = UIColor.black
-        //            detailVC.view.layoutIfNeeded()
-        //            detailVC.showImageView.addGestureRecognizer(singleTap)
         
+        if String(describing: NSNull()) == ""  {
+            print("adsf")
+        }
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return UIStatusBarStyle.default
     }
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        //        fadeIn()
-        
-    }
-    
-    
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -93,7 +87,8 @@ extension BrowserPageViewController {
             return
         }
         showing = true
-        
+//        view.isUserInteractionEnabled = false
+        dataSource = nil
         let contantView =  self.viewControllers?.first?.view
         contantView?.isHidden = true
         let fadeView = UIImageView()
@@ -118,7 +113,6 @@ extension BrowserPageViewController {
             w = image!.size.width / max(widthRatio, heightRatio)
             h = image!.size.height / max(widthRatio, heightRatio)
         }
-        print("bouns:\(view.bounds.size)")
         
         let x = (view.bounds.width - w)/2
         let y = (view.bounds.height - h)/2 + 10
@@ -133,15 +127,20 @@ extension BrowserPageViewController {
             fadeView.removeFromSuperview()
             contantView?.isHidden = false;
             self.showing = false
+           self.dataSource = self
+
         }
     }
     
     @objc fileprivate func fadeOut(currentView : UIView) {
         // gestureRecognizers.view as! UIImageView
-        guard let fadeOutView = fadeOutViewBlock!(currentIndex) else {
+        guard let fadeOutView = fadeOutViewBlock?(currentIndex) else {
             view.removeFromSuperview()
             return
         }
+        
+        dataSource = nil
+
         fadeOutView.alpha = 0.0
         let fadeView = UIImageView()
         fadeView.contentMode = fadeOutView.contentMode
