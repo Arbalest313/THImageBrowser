@@ -11,19 +11,29 @@ import UIKit
 let screenBounds = UIScreen.main.bounds
 
 class BrowserDetailViewController: UIViewController, BrowserVCHandler {
-    @IBOutlet weak var showImageView: UIImageView!
-    @IBOutlet weak var mainScrollView: UIScrollView!
+//    @IBOutlet weak var showImageView: UIImageView!
+//    @IBOutlet weak var mainScrollView: UIScrollView!
+    let showImageView = UIImageView()
+    let mainScrollView = UIScrollView()
     
-    private var imageWidth: CGFloat = screenBounds.size.width
+    fileprivate var imageWidth: CGFloat = screenBounds.size.width
     fileprivate var imageHeight: CGFloat?
     
     // 数据模型
     var dataModel: BrowserViewable?
+    var actionSheet = UIActionSheet()
+    
     var dismissSelf:((_ fadeOutView:UIView) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.black
+        showImageView.frame = CGRect(x: (screenBounds.width - 100) / 2, y: (screenBounds.height - 100) / 2, width: 100, height: 100)
+        mainScrollView.frame = view.bounds
+        showImageView.center = mainScrollView.center
+        view.addSubview(mainScrollView)
+        mainScrollView.addSubview(showImageView)
+        
         if let model = dataModel, let urlStr = model.imageUrl, let url = URL(string: urlStr) {
             showImageView.sd_setImage(with: url, completed: { (image, error, cacheType, url) in
                 if let realImageWidth = image?.size.width, let realImageHeight = image?.size.height {
@@ -31,6 +41,18 @@ class BrowserDetailViewController: UIViewController, BrowserVCHandler {
                         return
                     }
                     self.imageHeight = self.imageWidth / realImageWidth * realImageHeight
+                    UIView.animate(withDuration: 0.3, animations: { 
+                        self.showImageView.frame.size = CGSize(width: self.imageWidth, height: self.imageHeight!)
+                        self.showImageView.center = self.mainScrollView.center
+                    })
+                    
+//                    self.showImageView.translatesAutoresizingMaskIntoConstraints = true
+//                    self.showImageView.removeConstraints(self.showImageView.constraints)
+//                    self.showImageView.removeFromSuperview()
+//                    self.mainScrollView.addSubview(self.showImageView)
+//                    self.showImageView.autoSetDimensions(to: CGSize(width: self.imageWidth, height: self.imageHeight!))
+//                    self.showImageView.autoCenterInSuperview()
+//                    self.showImageView.layoutIfNeeded()
                 }
             })
         }
@@ -45,7 +67,7 @@ class BrowserDetailViewController: UIViewController, BrowserVCHandler {
         showImageView.isUserInteractionEnabled = true
         
         mainScrollView.delegate = self
-        mainScrollView.maximumZoomScale = 3.0
+        mainScrollView.maximumZoomScale = 2.0
         mainScrollView.minimumZoomScale = 0.5
         
         showImageView.contentMode = .scaleAspectFit
@@ -57,7 +79,6 @@ class BrowserDetailViewController: UIViewController, BrowserVCHandler {
         showImageView.addGestureRecognizer(doubleTap)
         
         singleTap.require(toFail: doubleTap)
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -74,13 +95,16 @@ class BrowserDetailViewController: UIViewController, BrowserVCHandler {
             let zoomRect = self.zoomRect(forScale: 2.0, withCenter: touchCenter)
             self.mainScrollView.zoom(to: zoomRect, animated: true)
             
-            
         } else {
             self.mainScrollView.setZoomScale(1.0, animated: true)
         }
-        
-        
     }
+    
+//    func pinchHandle(pinch: UIGestureRecognizer) {
+//        let pinchPoint =  pinch.location(in: pinch.view)
+//        let zoomRect = self.zoomRect(forScale: 2.0, withCenter: pinchPoint)
+//        self.mainScrollView.zoom(to: zoomRect, animated: true)
+//    }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return UIStatusBarStyle.default
@@ -94,7 +118,6 @@ class BrowserDetailViewController: UIViewController, BrowserVCHandler {
     
     //长按  弹出Action
     func handleLongpressGesture () {
-        let actionSheet = UIActionSheet()
         actionSheet.addButton(withTitle: "取消")
         actionSheet.addButton(withTitle: "保存图片")
         actionSheet.cancelButtonIndex = 0
@@ -138,36 +161,55 @@ extension BrowserDetailViewController: UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return self.showImageView
     }
-
-    func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
-        if scale < 1.0 {
-            UIView.animate(withDuration: 0.5, animations: {
-                self.mainScrollView.zoomScale = 1.0
-            })
-        }
+    
+    func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
         
     }
-    
+    func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
+        if scale < 1.0 {
+            self.mainScrollView.setZoomScale(1.0, animated: true)
+        }
+//        print("size:<<<\(mainScrollView.contentSize)\n offset\(mainScrollView.contentOffset)")
+        
+    }
 }
 
 extension BrowserDetailViewController {
+    func adjustContentOffset() {
+        let currentY = mainScrollView.contentOffset.y
+        
+        let lower = (mainScrollView.contentSize.height - imageHeight!) / 2
+        var result = currentY
+        if  lower > currentY{
+            result = lower
+        }
+        if lower + showImageView.frame.height/2 < currentY {
+            result =  lower + showImageView.frame.height/2
+        }
+        print("result :\(result) currntY:\(currentY)  lower:\(lower)")
+
+        mainScrollView.setContentOffset(CGPoint(x:mainScrollView.contentOffset.x, y:result), animated: false);
+    }
+    
     func zoomRect(forScale scale: CGFloat, withCenter center: CGPoint) -> CGRect {
         
         // 调整可能点击图片空白区域的center
         let adjustCenter = self.adjustScaleCenter(withCenter: center)
         
         
-        
-        
         var tempRect: CGRect = CGRect(x: 0, y: 0, width: 0, height: 0)
-        tempRect.size.height = showImageView.frame.height / scale
-        tempRect.size.width = showImageView.frame.width / scale
+        tempRect.size.height = showImageView.frame.size.height / scale
+        tempRect.size.width = showImageView.frame.size.width / scale
         
         let zoomCenter = showImageView.convert(adjustCenter, from: self.mainScrollView)
         
+        
         tempRect.origin.x = zoomCenter.x - (tempRect.size.width / 2.0)
+
         tempRect.origin.y = zoomCenter.y - (tempRect.size.height / 2.0)
         
+        print("size:<<<\(tempRect))")
+
         return tempRect
         
     }
@@ -178,24 +220,35 @@ extension BrowserDetailViewController {
         
         var center = touchCenter
         
-        guard let actualImageHeight = self.imageHeight else {
+        guard let _ = self.imageHeight else {
             return CGPoint(x: 0, y: 0)
         }
         
-        let actualImageY = (self.showImageView.bounds.size.height - actualImageHeight) / 2
-        
-        // 双击区域在图片上方空白处，需作调整，调整touchCenter数值
-        if center.y > 0 && center.y < actualImageY {
-            center.y = self.showImageView.bounds.size.height / 2
-        }
-        
-        let actualImageMaxY = (self.showImageView.bounds.size.height + actualImageHeight) / 2
-        // 双击区域在图片下方空白处，需作调整，调整touchCenter数值
-        if center.y > actualImageMaxY && center.y < self.showImageView.bounds.size.height {
+        if self.isOperatingOnBlankArea(withCenter: center) {
             center.y = self.showImageView.bounds.size.height / 2
         }
         
         return center
-
+    }
+    
+    func isOperatingOnBlankArea(withCenter operateCenter: CGPoint) -> Bool {
+        
+        if let actualImageHeight = self.imageHeight {
+            let actualImageY = (self.showImageView.bounds.size.height - actualImageHeight) / 2
+            
+            // 交互区域在图片上方空白处
+            if operateCenter.y > 0 && operateCenter.y < actualImageY {
+                return true
+            }
+            
+            let actualImageMaxY = (self.showImageView.bounds.size.height + actualImageHeight) / 2
+            // 交互区域在图片下方空白处
+            if operateCenter.y > actualImageMaxY && operateCenter.y < self.showImageView.bounds.size.height {
+                return true
+            }
+        }
+        return false
     }
 }
+
+

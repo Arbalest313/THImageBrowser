@@ -138,10 +138,6 @@
                             <constraint firstItem="jgn-cW-43B" firstAttribute="leading" secondItem="p9g-dY-C0m" secondAttribute="leading" id="xhQ-G2-Pb3"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="mainScrollView" destination="jgn-cW-43B" id="KcP-mw-OoL"/>
-                        <outlet property="showImageView" destination="qkJ-Ty-4n4" id="0SS-Na-Kbx"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Coa-2Z-Nq0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

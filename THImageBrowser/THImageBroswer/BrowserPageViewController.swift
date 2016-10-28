@@ -115,7 +115,7 @@ extension BrowserPageViewController {
         }
         
         let x = (view.bounds.width - w)/2
-        let y = (view.bounds.height - h)/2 + 10
+        let y = (view.bounds.height - h)/2 // + 10
         
         let finalFrame = CGRect(x:x, y:y, width:w, height:h)
         
@@ -164,7 +164,7 @@ extension BrowserPageViewController {
             w = image!.size.width / max(widthRatio, heightRatio)
             h = image!.size.height / max(widthRatio, heightRatio)
             let x = (view.bounds.width - w)/2
-            let y = (view.bounds.height - h)/2 + 10
+            let y = (view.bounds.height - h)/2 //+ 10
             startFrame = CGRect(x:x, y:y, width:w, height:h)
         }
         
