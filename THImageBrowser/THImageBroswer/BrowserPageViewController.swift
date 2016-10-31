@@ -39,11 +39,9 @@ class BrowserPageViewController: UIPageViewController {
         self.dataSource = self
         view.backgroundColor = UIColor.black
         
-        if String(describing: NSNull()) == ""  {
-            print("adsf")
-        }
+
     }
-    
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return UIStatusBarStyle.default
     }
@@ -99,7 +97,8 @@ extension BrowserPageViewController {
         
         var w = (fadeView.frame.width)
         var h = (fadeView.frame.height)
-        
+        w = 100
+        h = 100
         //如果已经下载好了大图，重新计算图片的大小，
         guard let model = viewablesSources?(currentIndex) else {
             return
@@ -145,9 +144,8 @@ extension BrowserPageViewController {
         let fadeView = UIImageView()
         fadeView.contentMode = fadeOutView.contentMode
         fadeView.clipsToBounds = true
-        fadeView.image =  snapShot(fadeOutView)//.snapshotView(afterScreenUpdates:false)
+        fadeView.image = snapShot(fadeOutView)//.snapshotView(afterScreenUpdates:false)
         var startFrame = (fadeOutView.superview?.convert(fadeOutView.frame, to: view))!
-        
         var w = (fadeView.frame.width)
         var h = (fadeView.frame.height)
         

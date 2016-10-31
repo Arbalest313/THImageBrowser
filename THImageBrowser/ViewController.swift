@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SDWebImage
 class ViewController: UIViewController {
     @IBOutlet weak var showImage: UIButton!
     @IBOutlet weak var v1: UIImageView!
@@ -41,11 +41,16 @@ class ViewController: UIViewController {
             view.contentMode = .scaleAspectFill
             view.clipsToBounds = true
         }
+        SDImageCache.shared().clearDisk()
+        SDImageCache.shared().clearMemory()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+//        SDImageCache.shared().cleanDisk()
+
+
         v1.sd_setImage(with:url(string:compressedURL[0]))
         v2.sd_setImage(with:url(string:compressedURL[1]))
         v3.sd_setImage(with:url(string:compressedURL[2]))
@@ -65,6 +70,8 @@ class ViewController: UIViewController {
             let viewable = BrowserViewable()
             viewable.index = index
             viewable.imageUrl = self.originalURL[index]
+            let imageV = self.view.viewWithTag(index + 1) as! UIImageView
+            viewable.placeholder = imageV.image
             return viewable
         }).configurableFade(inView:sender.view!, outView: { (index) -> UIView? in
             return self.view.viewWithTag(index+1)

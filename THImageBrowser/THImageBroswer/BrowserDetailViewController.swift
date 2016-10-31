@@ -7,15 +7,15 @@
 //
 
 import UIKit
-
+import SDWebImage
 let screenBounds = UIScreen.main.bounds
-
+let kBrowserDetailViewControllerNotic = "kBrowserDetailViewControllerNotic"
 class BrowserDetailViewController: UIViewController, BrowserVCHandler {
 //    @IBOutlet weak var showImageView: UIImageView!
 //    @IBOutlet weak var mainScrollView: UIScrollView!
     let showImageView = UIImageView()
     let mainScrollView = UIScrollView()
-    
+    var zoomScale : CGFloat  = 2.0
     fileprivate var imageWidth: CGFloat = screenBounds.size.width
     fileprivate var imageHeight: CGFloat?
     
@@ -25,86 +25,91 @@ class BrowserDetailViewController: UIViewController, BrowserVCHandler {
     
     var dismissSelf:((_ fadeOutView:UIView) -> Void)?
     
+    lazy var indicator = UIActivityIndicatorView(activityIndicatorStyle:UIActivityIndicatorViewStyle.whiteLarge)
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = UIColor.black
+        showImageView.contentMode = .scaleAspectFill
+        showImageView.clipsToBounds = true
         showImageView.frame = CGRect(x: (screenBounds.width - 100) / 2, y: (screenBounds.height - 100) / 2, width: 100, height: 100)
+
         mainScrollView.frame = view.bounds
         showImageView.center = mainScrollView.center
         view.addSubview(mainScrollView)
         mainScrollView.addSubview(showImageView)
         
+        mainScrollView.delegate = self
+        
+        showImageView.isUserInteractionEnabled = true
+        
+        indicator.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        indicator.center = view.center;
+        view.addSubview(indicator)
+        indicator.bringSubview(toFront:view)
+        indicator.startAnimating()
+        
+        let singleTap = UITapGestureRecognizer(target: self, action: #selector(BrowserDetailViewController.dismiss as (BrowserDetailViewController) -> () -> ()))
+        view.addGestureRecognizer(singleTap)
+        
+        //长按手势
+        let longpressGesutre = UILongPressGestureRecognizer(target: self, action: #selector(BrowserDetailViewController.handleLongpressGesture as (BrowserDetailViewController) -> () -> ()))
+        longpressGesutre.numberOfTouchesRequired = 1
+        
+        
+        
+        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(doubleTapHandle(tap:)))
+        doubleTap.numberOfTapsRequired = 2
+        
+        singleTap.require(toFail: doubleTap)
+
         if let model = dataModel, let urlStr = model.imageUrl, let url = URL(string: urlStr) {
-            showImageView.sd_setImage(with: url, completed: { (image, error, cacheType, url) in
+            showImageView.sd_setImage(with: url, placeholderImage: model.placeholder, options:SDWebImageOptions(rawValue: UInt(1)), completed: { (image, error, cacheType, url) in
+                self.indicator.stopAnimating()
                 if let realImageWidth = image?.size.width, let realImageHeight = image?.size.height {
                     guard realImageWidth != 0 && realImageHeight != 0 else {
                         return
                     }
                     self.imageHeight = self.imageWidth / realImageWidth * realImageHeight
-                    UIView.animate(withDuration: 0.3, animations: { 
+                    UIView.animate(withDuration: 0.3, animations: {
                         self.showImageView.frame.size = CGSize(width: self.imageWidth, height: self.imageHeight!)
                         self.showImageView.center = self.mainScrollView.center
                     })
-                    
-//                    self.showImageView.translatesAutoresizingMaskIntoConstraints = true
-//                    self.showImageView.removeConstraints(self.showImageView.constraints)
-//                    self.showImageView.removeFromSuperview()
-//                    self.mainScrollView.addSubview(self.showImageView)
-//                    self.showImageView.autoSetDimensions(to: CGSize(width: self.imageWidth, height: self.imageHeight!))
-//                    self.showImageView.autoCenterInSuperview()
-//                    self.showImageView.layoutIfNeeded()
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: kBrowserDetailViewControllerNotic), object: nil)
+                    self.mainScrollView.maximumZoomScale = self.mainScrollView.bounds.height / (self.imageHeight)!
+                    self.zoomScale = self.mainScrollView.maximumZoomScale
+                    self.mainScrollView.minimumZoomScale = 0.5
+                    self.showImageView.contentMode = .scaleAspectFit
+
                 }
+                self.view.addGestureRecognizer(longpressGesutre)
+                self.view.addGestureRecognizer(doubleTap)
+
             })
         }
-        let singleTap = UITapGestureRecognizer(target: self, action: #selector(BrowserDetailViewController.dismiss as (BrowserDetailViewController) -> () -> ()))
-        showImageView.addGestureRecognizer(singleTap)
-        
-        //长按手势
-        let longpressGesutre = UILongPressGestureRecognizer(target: self, action: #selector(BrowserDetailViewController.handleLongpressGesture as (BrowserDetailViewController) -> () -> ()))
-        longpressGesutre.numberOfTouchesRequired = 1
-        self.view.addGestureRecognizer(longpressGesutre)
-
-        showImageView.isUserInteractionEnabled = true
-        
-        mainScrollView.delegate = self
-        mainScrollView.maximumZoomScale = 2.0
-        mainScrollView.minimumZoomScale = 0.5
-        
-        showImageView.contentMode = .scaleAspectFit
-        showImageView.isUserInteractionEnabled = true
-        
-        
-        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(doubleTapHandle(tap:)))
-        doubleTap.numberOfTapsRequired = 2
-        showImageView.addGestureRecognizer(doubleTap)
-        
-        singleTap.require(toFail: doubleTap)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
     }
     
+    
     func doubleTapHandle(tap: UIGestureRecognizer) {
         
         // 双击：如果未放大，则放大两倍；否则，缩小为原图大小
         if self.mainScrollView.zoomScale == 1.0 {
             
-            let touchCenter = tap.location(in: tap.view)
+            let touchCenter = tap.location(in: self.view)
             
-            let zoomRect = self.zoomRect(forScale: 2.0, withCenter: touchCenter)
+            let zoomRect = self.zoomRect(forScale: CGFloat(zoomScale), withCenter: touchCenter)
             self.mainScrollView.zoom(to: zoomRect, animated: true)
             
         } else {
             self.mainScrollView.setZoomScale(1.0, animated: true)
         }
     }
-    
-//    func pinchHandle(pinch: UIGestureRecognizer) {
-//        let pinchPoint =  pinch.location(in: pinch.view)
-//        let zoomRect = self.zoomRect(forScale: 2.0, withCenter: pinchPoint)
-//        self.mainScrollView.zoom(to: zoomRect, animated: true)
-//    }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return UIStatusBarStyle.default
@@ -162,15 +167,10 @@ extension BrowserDetailViewController: UIScrollViewDelegate {
         return self.showImageView
     }
     
-    func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
-        
-    }
     func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
         if scale < 1.0 {
             self.mainScrollView.setZoomScale(1.0, animated: true)
         }
-//        print("size:<<<\(mainScrollView.contentSize)\n offset\(mainScrollView.contentOffset)")
-        
         
     }
 }
@@ -252,15 +252,3 @@ extension BrowserDetailViewController {
     }
 }
 
-
-// extension BrowserDetailViewController: UIGestureRecognizerDelegate {
-//    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        
-//        let operatePoint = gestureRecognizer.location(in: gestureRecognizer.view)
-//        if self.isOperatingOnBlankArea(withCenter: operatePoint) {
-//            return false
-//        }
-        
-//        return true
-//    }
-// }

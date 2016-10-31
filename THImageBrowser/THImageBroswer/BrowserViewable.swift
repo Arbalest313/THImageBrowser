@@ -12,6 +12,9 @@ import UIKit
 class BrowserViewable: NSObject {
     // 小图地址
     var thumbnailUrl: String?
+    // 小图
+    var placeholder: UIImage?
+
     // 大图地址
     var imageUrl: String?
     // 图文信息
