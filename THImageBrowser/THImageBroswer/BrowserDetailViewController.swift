@@ -37,7 +37,6 @@ class BrowserDetailViewController: UIViewController, BrowserVCHandler {
         zoomableImageView.frame = CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height)
         view.addSubview(zoomableImageView)
         
-        self.setupImageModeGestureRecognizers()
         zoomableImageView.frame = CGRect(x: 0, y: 0, width:100, height: 100)
         zoomableImageView.setImageViewContenMode(.scaleAspectFill)
         zoomableImageView.center = view.center
@@ -50,31 +49,25 @@ class BrowserDetailViewController: UIViewController, BrowserVCHandler {
         view.addSubview(indicator)
         indicator.bringSubview(toFront:view)
         indicator.startAnimating()
-        
 
-        
-        if let model = dataModel, let urlStr = model.imageUrl, let url = URL(string: urlStr) {
-            showImageView.sd_setImage(with: url, completed: { (image, error, cacheType, url) in
-                self.indicator.stopAnimating()
-                self.zoomableImageView.contentMode = .scaleAspectFit
-                self.zoomableImageView.setImageViewContenMode(.scaleAspectFit)
-                self.zoomableImageView.image = image
-                UIView.animate(withDuration: 0.3, animations: {
-                    self.zoomableImageView.frame = CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height)
-                })
-            })
-        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.setupImageModeAndGestureRecognizers()
+    }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return UIStatusBarStyle.default
     }
     
-    func setupImageModeGestureRecognizers() {
+    
+    
+    func setupImageModeAndGestureRecognizers() {
         let singleTap = UITapGestureRecognizer(target: self, action: #selector(BrowserDetailViewController.dismiss as (BrowserDetailViewController) -> () -> ()))
         view.addGestureRecognizer(singleTap)
         
@@ -82,12 +75,24 @@ class BrowserDetailViewController: UIViewController, BrowserVCHandler {
         let longpressGesutre = UILongPressGestureRecognizer(target: self, action: #selector(BrowserDetailViewController.handleLongpressGesture as (BrowserDetailViewController) -> () -> ()))
         longpressGesutre.numberOfTouchesRequired = 1
         self.view.isUserInteractionEnabled = true
-        self.view.addGestureRecognizer(longpressGesutre)
-        
-        
         // 手势依赖
         singleTap.require(toFail: longpressGesutre)
         singleTap.require(toFail: zoomableImageView.doubleTapGestureRecognizer)
+        
+        zoomableImageView.isUserInteractionEnabled = false
+        if let model = dataModel, let urlStr = model.imageUrl, let url = URL(string: urlStr) {
+            showImageView.sd_setImage(with: url, completed: { (image, error, cacheType, url) in
+                self.indicator.stopAnimating()
+                self.zoomableImageView.contentMode = .scaleAspectFit
+                self.zoomableImageView.setImageViewContenMode(.scaleAspectFit)
+                self.zoomableImageView.image = image
+                UIView.animate(withDuration: 0.4, animations: {
+                    self.zoomableImageView.frame = CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height)
+                })
+                self.zoomableImageView.isUserInteractionEnabled = true
+                self.view.addGestureRecognizer(longpressGesutre)
+            })
+        }
 
     }
     

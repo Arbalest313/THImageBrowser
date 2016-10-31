@@ -34,6 +34,7 @@ class BrowserPageViewController: UIPageViewController {
         }
     }
     
+    var pageController = UIPageControl ()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.dataSource = self
@@ -227,6 +228,12 @@ extension BrowserPageViewController: UIPageViewControllerDataSource {
         }
         
         return nil
+    }
+    internal func presentationCount(for pageViewController: UIPageViewController) -> Int {
+        return 4
+    }
+    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+        return 1
     }
 }
 
