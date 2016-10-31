@@ -98,7 +98,7 @@ extension BrowserPageViewController {
         var w = (fadeView.frame.width)
         var h = (fadeView.frame.height)
         w = 100
-        h = 100
+        h = 100 * max(imageToBoundsWidthRatio(image: fadeView.image!),  imageToBoundsHeightRatio(image: fadeView.image!))
         //如果已经下载好了大图，重新计算图片的大小，
         guard let model = viewablesSources?(currentIndex) else {
             return

@@ -116,28 +116,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jgn-cW-43B">
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qkJ-Ty-4n4"/>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="qkJ-Ty-4n4" secondAttribute="trailing" id="6Sz-Fa-cSS"/>
-                                    <constraint firstItem="qkJ-Ty-4n4" firstAttribute="leading" secondItem="jgn-cW-43B" secondAttribute="leading" id="HOW-3z-QyV"/>
-                                    <constraint firstItem="qkJ-Ty-4n4" firstAttribute="centerX" secondItem="jgn-cW-43B" secondAttribute="centerX" id="ILi-eL-jK2"/>
-                                    <constraint firstAttribute="bottom" secondItem="qkJ-Ty-4n4" secondAttribute="bottom" id="dDx-Ik-9JU"/>
-                                    <constraint firstItem="qkJ-Ty-4n4" firstAttribute="centerY" secondItem="jgn-cW-43B" secondAttribute="centerY" id="qdZ-ww-yNU"/>
-                                    <constraint firstItem="qkJ-Ty-4n4" firstAttribute="top" secondItem="jgn-cW-43B" secondAttribute="top" id="uMs-Fe-rPe"/>
-                                </constraints>
-                            </scrollView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hAs-yB-xyH"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="jgn-cW-43B" secondAttribute="trailing" id="HhT-iT-Tud"/>
-                            <constraint firstItem="D26-cP-mGJ" firstAttribute="top" secondItem="jgn-cW-43B" secondAttribute="bottom" id="Yck-cP-2mL"/>
-                            <constraint firstItem="jgn-cW-43B" firstAttribute="top" secondItem="9OC-4O-IT9" secondAttribute="bottom" id="eGY-4b-jJh"/>
-                            <constraint firstItem="jgn-cW-43B" firstAttribute="leading" secondItem="p9g-dY-C0m" secondAttribute="leading" id="xhQ-G2-Pb3"/>
+                            <constraint firstItem="D26-cP-mGJ" firstAttribute="top" secondItem="hAs-yB-xyH" secondAttribute="bottom" id="GO6-Du-Q6J"/>
+                            <constraint firstAttribute="trailing" secondItem="hAs-yB-xyH" secondAttribute="trailing" id="Nmj-eo-dHk"/>
+                            <constraint firstItem="hAs-yB-xyH" firstAttribute="top" secondItem="p9g-dY-C0m" secondAttribute="top" id="W8l-7N-1S1"/>
+                            <constraint firstItem="hAs-yB-xyH" firstAttribute="leading" secondItem="p9g-dY-C0m" secondAttribute="leading" id="x50-2q-WvU"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="showImageView" destination="hAs-yB-xyH" id="RNP-ev-Ptg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Coa-2Z-Nq0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

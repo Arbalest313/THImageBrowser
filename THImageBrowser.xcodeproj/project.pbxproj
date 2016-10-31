@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B6C407D1DC6DD9200FE5E9F /* FDTiledImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B6C407A1DC6DD9200FE5E9F /* FDTiledImageView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0B6C407E1DC6DD9200FE5E9F /* FDZoomableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B6C407C1DC6DD9200FE5E9F /* FDZoomableImageView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0B6C40861DC6DDAC00FE5E9F /* NSObject+PerformBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B6C40811DC6DDAC00FE5E9F /* NSObject+PerformBlock.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0B6C40871DC6DDAC00FE5E9F /* UIScrollView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B6C40831DC6DDAC00FE5E9F /* UIScrollView+Layout.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0B6C40881DC6DDAC00FE5E9F /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B6C40851DC6DDAC00FE5E9F /* UIView+Layout.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1C2EF0B91D98D38800E46390 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C2EF0AC1D98D38800E46390 /* Assets.xcassets */; };
 		1C2EF0BF1D98D38800E46390 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1C2EF0B61D98D38800E46390 /* Info.plist */; };
 		1C2EF0C41D98E27400E46390 /* FadeInNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2EF0C21D98E27400E46390 /* FadeInNavigationDelegate.swift */; };
@@ -24,6 +29,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B6C40791DC6DD9200FE5E9F /* FDTiledImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDTiledImageView.h; sourceTree = "<group>"; };
+		0B6C407A1DC6DD9200FE5E9F /* FDTiledImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDTiledImageView.m; sourceTree = "<group>"; };
+		0B6C407B1DC6DD9200FE5E9F /* FDZoomableImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDZoomableImageView.h; sourceTree = "<group>"; };
+		0B6C407C1DC6DD9200FE5E9F /* FDZoomableImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDZoomableImageView.m; sourceTree = "<group>"; };
+		0B6C40801DC6DDAC00FE5E9F /* NSObject+PerformBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PerformBlock.h"; sourceTree = "<group>"; };
+		0B6C40811DC6DDAC00FE5E9F /* NSObject+PerformBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PerformBlock.m"; sourceTree = "<group>"; };
+		0B6C40821DC6DDAC00FE5E9F /* UIScrollView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Layout.h"; sourceTree = "<group>"; };
+		0B6C40831DC6DDAC00FE5E9F /* UIScrollView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Layout.m"; sourceTree = "<group>"; };
+		0B6C40841DC6DDAC00FE5E9F /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
+		0B6C40851DC6DDAC00FE5E9F /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
+		0B6C40891DC6DE1100FE5E9F /* THImageBrowser-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "THImageBrowser-Bridging-Header.h"; sourceTree = "<group>"; };
+		0B6C408D1DC6E85600FE5E9F /* FDNullOrEmpty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDNullOrEmpty.h; sourceTree = "<group>"; };
 		1C2EF0AC1D98D38800E46390 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = THImageBrowser/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		1C2EF0B61D98D38800E46390 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = THImageBrowser/Info.plist; sourceTree = SOURCE_ROOT; };
 		1C2EF0C21D98E27400E46390 /* FadeInNavigationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeInNavigationDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +75,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B6C40771DC6DD7C00FE5E9F /* ZoomableImageView */ = {
+			isa = PBXGroup;
+			children = (
+				0B6C408C1DC6E85600FE5E9F /* Common */,
+				0B6C407F1DC6DDAC00FE5E9F /* Categories */,
+				0B6C40781DC6DD9200FE5E9F /* Controls */,
+			);
+			name = ZoomableImageView;
+			path = THImageBrowser/THImageBroswer/ZoomableImageView;
+			sourceTree = SOURCE_ROOT;
+		};
+		0B6C40781DC6DD9200FE5E9F /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				0B6C40791DC6DD9200FE5E9F /* FDTiledImageView.h */,
+				0B6C407A1DC6DD9200FE5E9F /* FDTiledImageView.m */,
+				0B6C407B1DC6DD9200FE5E9F /* FDZoomableImageView.h */,
+				0B6C407C1DC6DD9200FE5E9F /* FDZoomableImageView.m */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		0B6C407F1DC6DDAC00FE5E9F /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				0B6C40801DC6DDAC00FE5E9F /* NSObject+PerformBlock.h */,
+				0B6C40811DC6DDAC00FE5E9F /* NSObject+PerformBlock.m */,
+				0B6C40821DC6DDAC00FE5E9F /* UIScrollView+Layout.h */,
+				0B6C40831DC6DDAC00FE5E9F /* UIScrollView+Layout.m */,
+				0B6C40841DC6DDAC00FE5E9F /* UIView+Layout.h */,
+				0B6C40851DC6DDAC00FE5E9F /* UIView+Layout.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		0B6C408C1DC6E85600FE5E9F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0B6C408D1DC6E85600FE5E9F /* FDNullOrEmpty.h */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		1C2EF0AD1D98D38800E46390 /* Base.lproj */ = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +144,7 @@
 				1C7931BD1DC085B300C8D1AB /* BrowserDetailViewController.swift */,
 				1C7931BE1DC085B300C8D1AB /* BrowserPageViewController.swift */,
 				1C7931BF1DC085B300C8D1AB /* BrowserViewable.swift */,
+				0B6C40771DC6DD7C00FE5E9F /* ZoomableImageView */,
 			);
 			name = THImageBrowser;
 			sourceTree = "<group>";
@@ -91,6 +152,7 @@
 		1CF393E11D92C62B00DF11FF = {
 			isa = PBXGroup;
 			children = (
+				0B6C40891DC6DE1100FE5E9F /* THImageBrowser-Bridging-Header.h */,
 				1CF393EC1D92C62C00DF11FF /* THImageBrowser */,
 				1CF393EB1D92C62C00DF11FF /* Products */,
 				1CF394051D92F89F00DF11FF /* infogather_boy@2x.png */,
@@ -272,12 +334,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C7931B61DC084FD00C8D1AB /* AppDelegate.swift in Sources */,
+				0B6C40861DC6DDAC00FE5E9F /* NSObject+PerformBlock.m in Sources */,
 				1C7931C01DC085B300C8D1AB /* BrowserDetailViewController.swift in Sources */,
 				1C2EF0C51D98E27400E46390 /* FadeInTransition.swift in Sources */,
+				0B6C407E1DC6DD9200FE5E9F /* FDZoomableImageView.m in Sources */,
+				0B6C40871DC6DDAC00FE5E9F /* UIScrollView+Layout.m in Sources */,
 				1C7931BB1DC084FD00C8D1AB /* ViewController.swift in Sources */,
 				1C7931C21DC085B300C8D1AB /* BrowserViewable.swift in Sources */,
+				0B6C40881DC6DDAC00FE5E9F /* UIView+Layout.m in Sources */,
 				1C7931C11DC085B300C8D1AB /* BrowserPageViewController.swift in Sources */,
 				1C2EF0C41D98E27400E46390 /* FadeInNavigationDelegate.swift in Sources */,
+				0B6C407D1DC6DD9200FE5E9F /* FDTiledImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,7 +473,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tuhu.cn.main;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "THImageBrowser-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -424,7 +491,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tuhu.cn.main;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "THImageBrowser-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
