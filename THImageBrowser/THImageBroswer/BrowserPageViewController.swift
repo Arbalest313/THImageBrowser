@@ -57,7 +57,7 @@ class BrowserPageViewController: UIPageViewController {
     
     // 对外唯一调用的显示方法
     // dataSource闭包用于实时请求需要的数据模型（LazyLoad）
-    class func show(_ initialShowIndex: Int = 0, _ dataSource: @escaping ((_ index: Int) -> BrowserViewable?)) -> BrowserPageViewController {
+    class func show(startAt initialShowIndex: Int = 0, sourceAt dataSource: @escaping ((_ index: Int) -> BrowserViewable?)) -> BrowserPageViewController {
         let vc = BrowserPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
         vc.viewablesSources = dataSource
         

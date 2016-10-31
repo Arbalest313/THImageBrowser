@@ -64,8 +64,7 @@ class ViewController: UIViewController {
 
     @IBAction func showImage(_ sender: UIGestureRecognizer) {
         let numberOfViews = 3
-        print("showing")
-        BrowserPageViewController.show((sender.view?.tag)!-1, { (index) -> BrowserViewable? in
+        BrowserPageViewController.show(startAt:(sender.view?.tag)!-1, sourceAt:{ (index) -> BrowserViewable? in
             if index > numberOfViews || index<0{return nil}
             let viewable = BrowserViewable()
             viewable.index = index
