@@ -41,8 +41,8 @@ class ViewController: UIViewController {
             view.contentMode = .scaleAspectFill
             view.clipsToBounds = true
         }
-        SDImageCache.shared().clearDisk()
-        SDImageCache.shared().clearMemory()
+//        SDImageCache.shared().clearDisk()
+//        SDImageCache.shared().clearMemory()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -64,6 +64,7 @@ class ViewController: UIViewController {
 
     @IBAction func showImage(_ sender: UIGestureRecognizer) {
         let numberOfViews = 3
+        
         BrowserPageViewController.show(startAt:(sender.view?.tag)!-1, sourceAt:{ (index) -> BrowserViewable? in
             if index > numberOfViews || index<0{return nil}
             let viewable = BrowserViewable()

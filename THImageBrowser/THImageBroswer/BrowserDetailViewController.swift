@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SDWebImage
 class BrowserDetailViewController: UIViewController, BrowserVCHandler {
 
     @IBOutlet weak var showImageView: UIImageView!
@@ -48,8 +48,6 @@ class BrowserDetailViewController: UIViewController, BrowserVCHandler {
         indicator.center = view.center;
         view.addSubview(indicator)
         indicator.bringSubview(toFront:view)
-        indicator.startAnimating()
-
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -81,6 +79,10 @@ class BrowserDetailViewController: UIViewController, BrowserVCHandler {
         
         zoomableImageView.isUserInteractionEnabled = false
         if let model = dataModel, let urlStr = model.imageUrl, let url = URL(string: urlStr) {
+            if  !SDWebImageManager.shared().cachedImageExists(for:url) {
+                indicator.startAnimating()
+            }
+
             showImageView.sd_setImage(with: url, completed: { (image, error, cacheType, url) in
                 self.indicator.stopAnimating()
                 self.zoomableImageView.contentMode = .scaleAspectFit

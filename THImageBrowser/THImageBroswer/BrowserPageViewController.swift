@@ -17,8 +17,6 @@ protocol BrowserVCHandler {
     var dismissSelf:((_ fadeOutView:UIView) -> Void)? {get}
 }
 
-
-
 class BrowserPageViewController: UIPageViewController {
     
     var viewablesSources: ((_ index: Int) -> BrowserViewable?)?
@@ -39,8 +37,6 @@ class BrowserPageViewController: UIPageViewController {
         super.viewDidLoad()
         self.dataSource = self
         view.backgroundColor = UIColor.black
-        
-
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -229,12 +225,12 @@ extension BrowserPageViewController: UIPageViewControllerDataSource {
         
         return nil
     }
-    internal func presentationCount(for pageViewController: UIPageViewController) -> Int {
-        return 4
-    }
-    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-        return 1
-    }
+//    internal func presentationCount(for pageViewController: UIPageViewController) -> Int {
+//        return 4
+//    }
+//    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+//        return 1
+//    }
 }
 
 extension BrowserPageViewController{

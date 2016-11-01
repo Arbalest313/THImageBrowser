@@ -177,9 +177,9 @@
 				1C7931BC1DC085A300C8D1AB /* THImageBrowser */,
 				1C7931AF1DC084FD00C8D1AB /* AppDelegate.swift */,
 				1C7931B51DC084FD00C8D1AB /* ViewController.swift */,
-				1C2EF0C11D98E27400E46390 /* Transition */,
 				1C2EF0AC1D98D38800E46390 /* Assets.xcassets */,
 				1C7931B31DC084FD00C8D1AB /* THImageBroswer-Bridging-Header.h */,
+				1C2EF0C11D98E27400E46390 /* Transition */,
 				1C2EF0AD1D98D38800E46390 /* Base.lproj */,
 			);
 			name = THImageBrowser;
